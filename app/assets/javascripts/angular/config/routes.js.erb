@@ -1,0 +1,20 @@
+Lrn.config(
+  ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $stateProvider
+    .state('index', {
+      url: '/',
+      templateUrl: '<%= asset_path("main/index.html") %>',
+      controller: 'IndexController'
+    })
+
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
+}]).run
+    ['$rootScope', '$state',
+    function($rootScope, $state) {
+    $rootScope.$state = $state;
+}];
