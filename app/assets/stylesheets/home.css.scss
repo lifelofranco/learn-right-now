@@ -11,6 +11,7 @@
     margin-top: 10px;
     font-family: 'Brandon';
     font-size: 18px;
+    cursor: pointer;
 
   }
 
@@ -18,6 +19,11 @@
 .register-btn {
   background: none;
   border: 1px solid #F4D35E;
+  font-size: 16px;
+}
+.register-btn:hover, .register-btn:focus {
+  background: $yellow;
+  color: white;
 }
 .inline-b {
   display: inline-block;
