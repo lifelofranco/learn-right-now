@@ -1,1 +1,112 @@
-h1 Hello World
+section.background
+  .header
+    a.pull-left href="/"
+      =image_tag "logo.png", :class => "logo"
+    ul.nav
+      li ng-click="gotoElement('mentees')" for mentees
+      li ng-click="gotoElement('mentors')" for mentors
+      li ng-click="gotoElement('what')" what we do
+      li ng-click="gotoElement('footer')" contact
+      li.pull-right
+        button.btn.register-btn ng-click="gotoElement('register')"
+          | Register
+  .container.home
+    h1
+      | We believe that everyone needs a mentor.
+    h3.description
+      | Connect with our growing network of tutors
+    h3.inline-b.add-margin-right
+      | and join the hundreds of students who are
+    h3.learn
+      | learning right now.
+section.mentees.bg-gray#mentees
+  .container
+    .row
+      .col-md-6.padding
+        h2 For Mentees
+        .instructions
+          .steps
+            h2 1
+            p
+              | Search your desired topic and browse through a wide array of mentors/classes.
+          .steps
+            h2 2
+            p.row-space-top-4
+              | Message your mentor regarding your specific needs
+          .steps
+            h2 3
+            p.book
+              | Book your chosen mentor or class.
+      .col-md-5.col-md-offset-1.center.row-space-top-6
+        = image_tag "student.png", :class => "mentee"
+section#what
+  .container
+    .features.col-md-4.col-sm-12
+      =image_tag "star.png"
+      h3 Indulge your curiosity
+      p Browse through a wide variety of classes, from code to design to marketing
+    .features.col-md-4.col-sm-12
+      =image_tag "users.png"
+      h3 Learn from great mentors
+      p Be guided and get personalized feedback at every stage of your learning
+    .features.col-md-4.col-sm-12
+      =image_tag "customizable.png"
+      h3 Get better at what you love
+      p Embark on the road to mastery from the convenience of your computer
+
+
+
+section.mentor.bg-gray#mentors
+  .container
+    .row.row-space-5
+      .col-md-5.col-md-offset-1.row-space-top-6
+        =image_tag "teacher.png", :class => "mentor-img"
+      .col-md-6.padding
+        h2 For Mentors
+        .instructions
+          .steps
+            h2 1
+            p Fill up an application form and send supporting documents.
+          .steps
+            h2 2
+            p
+              | Get booked by mentees based on mentor or class profile.
+          .steps
+            h2 3
+            p.book
+              | Let LRN facilitate the payment procedure.
+section#register
+  .container.center
+    h1 Register to LRN
+    form
+      i.line-icon
+        | &#xe174;
+      input ng-class="{ 'error-now' : userDetail.fname.$invalid && submitted }" name="fname" type="text" placeholder="First name" ng-model="demo.user.fname" required="" ng-pattern="/^[a-zA-Z ]+$/"
+      i.line-icon
+        | &#xe174;
+      input ng-class="{ 'error-now' : userDetail.lname.$invalid && submitted }" name="lname" type="text" placeholder="Last name" ng-model="demo.user.lname" required="" ng-pattern="/^[a-zA-Z ]+$/"
+      i.line-icon
+        | &#xe125;
+      input ng-class="{ 'error-now' : userDetail.email.$invalid && submitted }" name="email" type="email" placeholder="Email" ng-model="demo.user.email" required=""
+    .row-space-top-4.row-space-4
+      button.btn.bg-blue.white Register
+section#footer.bg-orange
+  .container
+    .row.row-space-top-6
+      .col-md-6.center
+        =image_tag "lrn-img.png", :class => "lrn-img"
+      .col-md-6
+        h1.uppercase Get in Touch
+        ul
+          li
+            i.fa.fa-envelope-o aria-hidden="true"
+            | lrnrightnow@gmail.com
+          li
+            i.fa.fa-facebook-square aria-hidden="true"
+            | facebook.com/lrnrightnow
+          li
+            i.fa.fa-phone aria-hidden="true"
+            | +63 915 458 7029
+          li
+            i.fa.fa-map-marker aria-hidden="true"
+            | SOM 402, Ateneo de Manila University

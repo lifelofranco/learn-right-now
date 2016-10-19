@@ -1,0 +1,45 @@
+$blue: #153C66;
+$yellow: #F4D35E;
+$orange: #F1573B;
+$gray: #F7F7F7;
+$base-font: 'Brandon', sans-serif;
+
+
+@font-face {
+  font-family: 'Brandon';
+  src: asset-url('Brandon_bld.otf');
+  src: asset-url('Brandon_blk_it.otf') format('otf'),
+       asset-url('Brandon_blk.otf') format('otf'),
+       asset-url('Brandon_light_it.otf') format('otf'),
+       asset-url('Brandon_light.otf') format('otf'),
+       asset-url('Brandon_med_it.otf') format('otf'),
+       asset-url('Brandon_med.otf') format('truetype'),
+       asset-url('Brandon_reg_it.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$break-monitor: 1200px;
+$break-laptop: 992px;
+$break-tablet: 768px;
+$break-mobile: 480px;
+$break-nano: 320px;
+
+@mixin breakpoint($width) {
+  @if $width == monitor {
+    @media (min-width: $break-monitor) { @content; }
+  }
+  @else if $width == laptop {
+    @media (min-width: $break-laptop) { @content; }
+  }
+  @else if $width == tablet {
+    @media (min-width: $break-tablet) { @content; }
+  }
+  @else if $width == mobile {
+    @media (min-width: $break-mobile) { @content; }
+  }
+  @else if $width == nano {
+    @media (min-width: $break-nano)  { @content; }
+  }
+}

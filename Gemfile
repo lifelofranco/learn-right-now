@@ -27,9 +27,9 @@ gem 'sprockets', '2.12.3'
 gem 'spring',        group: :development
 
 gem 'pg'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'jquery-ui-rails'
 gem 'angularjs-rails'
-gem 'rails-angular-material'
 gem 'bourbon'
 gem 'susy'
 gem 'slim'

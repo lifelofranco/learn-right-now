@@ -6,12 +6,11 @@
 //= require angular-aria
 //= require angular-messages
 //= require angular-animate
-//= require angular-material
+//= require_tree ./components
 
 //= require angular-ui-router
 //= require angular/app
 //= require angular/config/routes
-//= require angular/config/themes
 //= require angular/controllers/application_controller
 //= require_tree ./angular/controllers
 
