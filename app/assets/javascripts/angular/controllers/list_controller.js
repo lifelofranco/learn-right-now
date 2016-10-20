@@ -1,0 +1,10 @@
+Lrn.controller('ListController', ['$scope','anchorSmoothScroll', '$location', 'UserService',
+  function($scope, anchorSmoothScroll, $location, UserService) {
+
+
+    UserService.getAll().then(function(d){
+      $scope.data = d
+    })
+
+
+}]);
