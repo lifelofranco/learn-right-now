@@ -1,5 +1,5 @@
 .container.row-space-top-7
-  
+
   h3.center List of All Subscribers
   table.table.table-striped.table-hover.table-bordered
     thead
@@ -8,12 +8,12 @@
         th First Name
         th Last Name
         th Email
-    tr.pointer-cursor.search-table ng-repeat="i in data" 
-      td 
-        | {{i.user_id}}
-      td 
+    tr.pointer-cursor.search-table ng-repeat="i in data"
+      td
+        | {{i.id}}
+      td
         | {{i.first_name}}
-      td 
+      td
         | {{i.last_name}}
-      td 
+      td
         | {{i.email}}
