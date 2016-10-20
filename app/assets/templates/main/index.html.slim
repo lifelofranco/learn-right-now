@@ -78,18 +78,18 @@ section.mentor.bg-gray#mentors
 section#register
   .container.center.row-space-top-4
     h1 Register to LRN
-    form
+    form name="userDetail" ng-submit="user(userDetail.$valid)" novalidate=""
       i.line-icon
         | &#xe174;
-      input ng-class="{ 'error-now' : userDetail.fname.$invalid && submitted }" name="fname" type="text" placeholder="First name" ng-model="demo.user.fname" required="" ng-pattern="/^[a-zA-Z ]+$/"
+      input ng-class="{ 'error-now' : userDetail.first_name.$invalid && submitted }" name="first_name" type="text" placeholder="First name" ng-model="demo.user.first_name" required="" ng-pattern="/^[a-zA-Z ]+$/"
       i.line-icon
         | &#xe174;
-      input ng-class="{ 'error-now' : userDetail.lname.$invalid && submitted }" name="lname" type="text" placeholder="Last name" ng-model="demo.user.lname" required="" ng-pattern="/^[a-zA-Z ]+$/"
+      input ng-class="{ 'error-now' : userDetail.last_name.$invalid && submitted }" name="last_name" type="text" placeholder="Last name" ng-model="demo.user.last_name" required="" ng-pattern="/^[a-zA-Z ]+$/"
       i.line-icon
         | &#xe125;
       input ng-class="{ 'error-now' : userDetail.email.$invalid && submitted }" name="email" type="email" placeholder="Email" ng-model="demo.user.email" required=""
-    .row-space-top-4.row-space-4
-      button.btn.bg-blue.white Register
+      .row-space-top-4.row-space-4
+        button.btn.bg-blue.white type="submit" Register
 section#footer.bg-orange
   .container
     .row.row-space-top-6
