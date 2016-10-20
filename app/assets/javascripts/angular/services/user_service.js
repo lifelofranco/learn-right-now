@@ -14,4 +14,16 @@ Lrn.service('UserService', ["$q", "$http",
 
     return d.promise;
   }
+
+  this.getAll = function() {
+    var d = $q.defer();
+    $http({
+      method: 'GET',
+      url: '/list',
+    }).success(function(data){
+      d.resolve(data);
+    });
+
+    return d.promise;
+  }
 }]);

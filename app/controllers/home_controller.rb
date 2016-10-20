@@ -13,4 +13,11 @@ class HomeController < ApplicationController
               )
     render json: user
   end
+
+  def list
+    users = User.all
+
+
+    render json: users
+  end
 end

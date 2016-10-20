@@ -8,6 +8,12 @@ Lrn.config(
       controller: 'IndexController'
     })
 
+    .state('list', {
+      url: '/subscribers',
+      templateUrl: '<%= asset_path("main/list.html") %>',
+      controller: 'ListController'
+    })
+
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({
   enabled: true,
