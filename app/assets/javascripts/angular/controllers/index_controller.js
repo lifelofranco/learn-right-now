@@ -1,5 +1,5 @@
-Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', 'UserService',
-  function($scope, anchorSmoothScroll, $location, UserService) {
+Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', 'UserService', 'ngDialog',
+  function($scope, anchorSmoothScroll, $location, UserService, ngDialog) {
     this.showNav = false;
 
     $scope.toggle = function() {
@@ -18,10 +18,19 @@ Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', '
    $scope.user = function() {
 
      console.log($scope.demo)
+     ngDialog.open({ templateUrl: 'main/success.html',
+         className: 'ngdialog-theme-default',
+         width: 500,
+         controller: ['$scope', function($scope) {
+           $scope.close = function() {
+             ngDialog.close();
+           }
+         }]
+       })
+     };
 
      UserService.subscribe($scope.demo.user).then(function(d) {
        console.log(d)
-     })
-   }
+    });
 
 }]);
