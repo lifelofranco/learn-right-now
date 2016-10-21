@@ -31,6 +31,8 @@ Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', '
              }
            }]
          })
+         $scope.userDetail.$setPristine();
+         $scope.demo.user = {};
     });
   }
 
