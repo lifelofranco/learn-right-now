@@ -1,0 +1,14 @@
+.modal-header
+  h2
+    | Login
+.modal-body
+  label for="email"
+  input.form-control type="email" placeholder="email" ng-model="email" name="email"
+  label for="password"
+  input.form-control type="password" placeholder="password" ng-model="password" name="password"
+  h4 ng-show="message"
+    | Message: {{message}}
+  h4 ng-show="error"
+    | Error: {{error}}
+.modal-footer
+  button.btn.bg-blue.white ng-click="createUser()" Login

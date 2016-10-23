@@ -25,7 +25,7 @@ module Box
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'vendor')
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'vendor', 'bower_components')
 
   end
 end

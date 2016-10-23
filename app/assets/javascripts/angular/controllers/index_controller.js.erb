@@ -1,0 +1,51 @@
+Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', 'SampleService', '$uibModal', '$firebaseAuth',
+  function($scope, anchorSmoothScroll, $location, SampleService, $uibModal, $firebaseAuth) {
+    this.showNav = false;
+
+    $scope.toggle = function() {
+      this.showNav= !this.showNav;
+    }
+
+
+    $scope.auth = $firebaseAuth();
+
+
+    // Check if user is logged in.
+    $scope.auth.$onAuthStateChanged(function(user) {
+      $scope.user = user;
+      console.log($scope.user)
+    });
+
+   $scope.gotoElement = function (eID){
+     // set the location.hash to the id of
+     // the element you wish to scroll to.
+     $location.hash('bottom');
+
+     // call $anchorScroll()
+     anchorSmoothScroll.scrollTo(eID);
+   };
+
+   $scope.openLogin = function() {
+       $uibModal.open({
+          animation: 'true',
+          templateUrl: '<%= asset_path("auth/login.html") %>',
+          controller: 'LoginController'
+        });
+   };
+
+   $scope.openRegister = function() {
+       $uibModal.open({
+          animation: 'true',
+          templateUrl: '<%= asset_path("auth/register.html") %>',
+          controller: 'RegisterController'
+        });
+   };
+
+   $scope.logout = function () {
+     $firebaseAuth().$signOut()
+     .then(function(){
+       alert('You are now signed out.');
+     })
+   };
+
+}]);

@@ -1,0 +1,8 @@
+{
+  "name": "dsl-generated-dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular-bootstrap": "latest",
+    "angular-h-sweetalert": "latest"
+  }
+}

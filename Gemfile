@@ -35,3 +35,5 @@ gem 'susy'
 gem 'slim'
 gem 'devise', '=3.3.0'
 gem 'twilio-ruby', '~> 3.12'
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
+gem 'bower-rails'

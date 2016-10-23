@@ -8,8 +8,16 @@ section.background
       li ng-click="gotoElement('what')" what we do
       li ng-click="gotoElement('footer')" contact
       li.pull-right
-        button.btn.register-btn ng-click="gotoElement('register')"
-          | register
+        button.btn.register-btn ng-click="gotoElement('register')" ng-show="!user"
+          | Subscribe your Email
+        button.btn.register-btn ng-click="openLogin()" ng-show="!user"
+          | Login
+        button.btn.register-btn ng-click="openRegister()" ng-show="!user"
+          | Register
+        button.btn.register-btn ng-show="user"
+          | {{user.email}}
+        button.btn.register-btn ng-click="logout()" ng-show="user"
+          | Logout
   .container.home
     h1
       | We believe that everyone needs a mentor.
