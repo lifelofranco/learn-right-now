@@ -89,7 +89,7 @@ section#register
         | &#xe125;
       input ng-class="{ 'error-now' : userDetail.email.$invalid && submitted }" name="email" type="email" placeholder="Email" ng-model="demo.user.email" required=""
       .row-space-top-4.row-space-4
-        button.btn.bg-blue.white type="submit" Register
+        button.btn.bg-blue.white type="submit" ng-disabled="userDetail.$invalid" Register
 section#footer.bg-orange
   .container
     .row.row-space-top-6
