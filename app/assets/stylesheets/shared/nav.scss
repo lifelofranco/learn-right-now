@@ -1,0 +1,47 @@
+// still need to transfer nav css
+
+
+.nav {
+  height: 100%;
+}
+.logo {
+  padding: 13px 50px 12px;
+}
+header {
+  height: 70px;
+  padding: 0 !important;
+  border-bottom: 1px solid #cfcfcf;
+  background: #153C66;
+
+  .links {
+    line-height: 51px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 300;
+    height: 100%;
+    margin: 0;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+  .btn-links {
+    margin-top: 11px;
+    margin-right: 45px;
+
+    li {
+      margin-left: 30px;
+    }
+  }
+}
+// .header:hover {
+//   background: white;
+//
+//   li {
+//     color: black;
+//   }
+// }

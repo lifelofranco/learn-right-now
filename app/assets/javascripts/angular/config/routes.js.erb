@@ -8,6 +8,12 @@ Lrn.config(
       controller: 'IndexController'
     })
 
+    .state('class', {
+      url: '/class',
+      templateUrl: 'main/class.html',
+      controller: 'ClassController'
+    })
+
     .state('list', {
       url: '/subscribers',
       templateUrl: 'main/list.html',
