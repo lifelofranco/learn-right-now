@@ -12,5 +12,17 @@ Lrn.controller('ClassController', ['$scope', '$location', 'UserService', 'ngDial
       this.prices = !this.prices;
     }
 
+    $scope.register = function() {
+      ngDialog.open({ templateUrl: 'shared/register.html',
+          className: 'ngdialog-theme-default',
+          width: 500,
+          controller: ['$scope', function($scope) {
+            $scope.close = function() {
+              ngDialog.close();
+            }
+          }]
+        })
+    }
+
 
 }])
