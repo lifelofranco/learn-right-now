@@ -1,5 +1,5 @@
-Lrn.controller('ClassController', ['$scope', '$location', 'UserService', 'ngDialog',
-  function($scope, $location, UserService, ngDialog) {
+Lrn.controller('ClassController', ['$scope', '$location', 'DemoService', 'ngDialog',
+  function($scope, $location, DemoService, ngDialog) {
 
     this.topics = false;
     this.prices = false;
@@ -12,17 +12,9 @@ Lrn.controller('ClassController', ['$scope', '$location', 'UserService', 'ngDial
       this.prices = !this.prices;
     }
 
-    $scope.register = function() {
-      ngDialog.open({ templateUrl: 'shared/register.html',
-          className: 'ngdialog-theme-default',
-          width: 500,
-          controller: ['$scope', function($scope) {
-            $scope.close = function() {
-              ngDialog.close();
-            }
-          }]
-        })
-    }
+
+
+    $scope.cards = DemoService.class();
 
 
 }])

@@ -1,16 +1,3 @@
-header
-  a.pull-left.logo href="/"
-    =image_tag "logo.png", :class => "logo-img"
-  ul.nav
-    li.links Browse Classes
-    .pull-right.btn-links
-      li
-        button.btn.register-btn ng-click="register()"
-          | register
-      li
-        button.btn.register-btn ng-click="login()"
-          | login
-
 .container
   .row.row-space-top-7
     .col-md-3
@@ -41,76 +28,22 @@ header
 
     .col-md-9
       h3 Classes For You
-      .card
-        .event
-          .image
-            =image_tag "class.png", :class => "event-img"
-            .price
-              p ₱ 400
-          .details
-            h5.ellipsis
-              | Social Media Marketing
-            p.date
-              | Wed, Nov. 2, 1:00 pm
-            p.location
-              | Ateneo de Manila University
-          .hashtag
-            p
-              | #entrepreneur
-            p
-              | #business
-      .card
-        .event
-          .image
-            =image_tag "class.png", :class => "event-img"
-            .price
-              p ₱ 400
-          .details
-            h5.ellipsis
-              | Social Media Marketing
-            p.date
-              | Wed, Nov. 2, 1:00 pm
-            p.location
-              | Ateneo de Manila University
-          .hashtag
-            p
-              | #entrepreneur
-            p
-              | #business
-      .card
-        .event
-          .image
-            =image_tag "class.png", :class => "event-img"
-            .price
-              p ₱ 400
-          .details
-            h5.ellipsis
-              | Social Media Marketing
-            p.date
-              | Wed, Nov. 2, 1:00 pm
-            p.location
-              | Ateneo de Manila University
-          .hashtag
-            p
-              | #entrepreneur
-            p
-              | #business
-
-      .card
-        .event
-          .image
-            =image_tag "class.png", :class => "event-img"
-            .price
-              p ₱ 400
-          .details
-            h5.ellipsis
-              | Social Media Marketing
-            p.date
-              | Wed, Nov. 2, 1:00 pm
-            p.location
-              | Ateneo de Manila University
-          .hashtag
-            p
-              | #entrepreneur
-            p
-              | #business
+      .card ng-repeat="card in cards"
+        a href="/class/show"
+          .event
+            .image
+              img.event-img ng-src="{{card.image}}"
+              .price
+                p
+                  | ₱ {{card.price}}
+            .details
+              h5.ellipsis
+                | {{card.title}}
+              p.date
+                | {{card.date}}
+              p.location
+                | {{card.location}}
+            .hashtag
+              p ng-repeat="tag in card.tags"
+                | #
+                | {{tag}}
