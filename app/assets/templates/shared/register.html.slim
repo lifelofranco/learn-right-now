@@ -1,0 +1,29 @@
+.login
+  h2 Learn Right Now
+  form.login-form name="registerForm" novalidate=""
+    .validation ng-messages="submitted && registerForm.firstName.$error"
+      p ng-message="required"  Your First Name is required
+      p ng-message="pattern"  Your First Name must not contain numbers or special characters
+    .row-space-2 ng-class="{'has-error': registerForm.firstName.$dirty && registerForm.firstName.$invalid }"
+      input.form-control name="firstName" ng-model="register.firstName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="First Name" required="" type="text" /
+    .validation ng-messages="submitted && registerForm.lastName.$error"
+      p ng-message="required"  Your Last Name is required
+      p ng-message="pattern"  Your Last Name must not contain numbers or special characters
+    .row-space-2 ng-class="{'has-error': registerForm.lastName.$dirty && registerForm.lastName.$invalid }"
+      input.form-control name="lastName" ng-model="register.lastName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="Last Name" required="" type="text" /
+    .validation ng-messages="submitted && registerForm.email.$error"
+      p ng-message="required"  Your email is required
+      p ng-message="pattern"  Your email is invalid
+    .row-space-2 ng-class="{'has-error': registerForm.email.$dirty && registerForm.email.$invalid }"
+      input.form-control name="email" ng-model="register.email" ng-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/" placeholder="Email Address" required="" type="text" /
+    .validation ng-messages="submitted && registerForm.password.$error"
+      p ng-message="required"  Your password is required
+      p ng-message="minlength"  Your password should have at least 6 characters
+    .row-space-2 ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$invalid }"
+      input.form-control name="password" ng-minlength="6" ng-model="register.password" placeholder="Password" required="" type="password" /
+    .validation ng-show="submitted && register.password != register.confirm_password"
+      p Passwords do not match.
+    .row-space-2 ng-class="{ 'has-error': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid }"
+      input.form-control name="confirmPassword" ng-model="register.confirm_password" ng-pattern="{{register.password}}" placeholder="Confirm password" required="" type="password" /
+
+    button.btn.login-btn formmethod="post" ng-click="submitRegisterFormregisterForm.$valid"  Sign up

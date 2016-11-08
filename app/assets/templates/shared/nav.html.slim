@@ -1,0 +1,13 @@
+header
+  a.pull-left.logo href="/"
+    =image_tag "logo.png", :class => "logo-img"
+  ul.nav
+    li.links Browse Classes
+    .pull-right.btn-links
+      li
+        button.btn.register-btn ng-click="register()"
+          | register
+      li
+        button.btn.register-btn ng-click="login()"
+          | login
+div ui-view="content"

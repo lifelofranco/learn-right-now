@@ -1,0 +1,125 @@
+// still need to transfer nav css
+
+
+.nav {
+  height: 100%;
+}
+.logo {
+  padding: 13px 50px 12px;
+}
+header {
+  height: 70px;
+  padding: 0 !important;
+  border-bottom: 1px solid #cfcfcf;
+  background: #153C66;
+
+  .links {
+    line-height: 51px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 300;
+    height: 100%;
+    margin: 0;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+  .btn-links {
+    margin-top: 11px;
+    margin-right: 45px;
+
+    li {
+      margin-left: 30px;
+    }
+  }
+}
+// .header:hover {
+//   background: white;
+//
+//   li {
+//     color: black;
+//   }
+// }
+
+//modal
+.login {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    .btn:focus, .btn:hover {
+        color: white;
+    }
+
+    .facebook-login {
+        margin-bottom: 30px;
+
+        span {
+            font-size: 14.5px;
+            margin-left: 20px;
+        }
+
+        a {
+            padding: 13px;
+            margin-right: 3px;
+            margin-bottom: 3px;
+            text-decoration: none;
+            // border: 0;
+            color: white;
+            background: #2d5f9a;
+
+        }
+        .fa-facebook {
+            font-size: 16px;
+        }
+    }
+
+    .form-control {
+        // width: 100%;
+        margin: auto;
+        min-width: 255px;
+        // margin-bottom: 15px;
+    }
+    .ng-valid.ng-dirty {
+        border-color: #008000;
+    }
+    a {
+        color: $green;
+    }
+    .validation {
+        text-align: left;
+
+        p {
+            margin: 2px 0;
+        }
+    }
+    .confirm {
+        color: $gray;
+    }
+    .create {
+        color: $green;
+        cursor: pointer;
+    }
+    h2 {
+        font-weight: 300;
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 9px;
+    }
+    .login-btn {
+      margin-top: 20px;
+      background: $blue;
+      color: white;
+      padding: 13px 33px 11px 33px;
+      border-radius: 2px;
+    }
+
+}
