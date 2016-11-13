@@ -91,15 +91,21 @@ bottom: 0;
   font-weight: bold;
 }
 
-
 .upcoming_class_date {
+  margin-top: -2%;
+}
+
+.upcoming_class_location {
   margin-top: -5%;
-  text-align: center;
 }
 
 .event {
   @include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
   background: #fff;
   text-align: center;
-  margin: 1%;
+  padding-bottom: 2%;
+}
+
+.upcoming_class_date_venue {
+  width: 100%;
 }
