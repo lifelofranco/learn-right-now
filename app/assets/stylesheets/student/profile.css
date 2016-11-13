@@ -1,0 +1,63 @@
+#user_profile_container {
+  background-color: #f7f8f8;
+  width: 100%;
+}
+
+#user_profile {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#user_photo_container {
+  width: 13vw;
+}
+
+#user_name {
+  font-size: 140%;
+}
+
+#user_photo{
+/* make it responsive */
+max-width: 100%;
+width:100%;
+height:auto;
+display:block;
+/* div height to be the same as width*/
+padding-top:100%;
+
+/* make it a cirkle */
+border-radius:50%;
+
+/* Centering on image`s center*/
+background-position-y: center;
+background-position-x: center;
+background-repeat: no-repeat;
+
+/* it makes the clue thing, takes smaller dimention to fill div */
+background-size: cover;
+
+/* it is optional, for making this div centered in parent*/
+margin: 0 auto;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+#user_details {
+  margin-left: 2%;
+}
+
+#email_location_container {
+  margin-top: -1%;
+  margin-bottom: 0.5%;
+}
+
+.user_details_beside_icon {
+  padding-left: 2%;
+  padding-right: 5%;
+}
+
+#location {
+  padding-left: 1%;
+}

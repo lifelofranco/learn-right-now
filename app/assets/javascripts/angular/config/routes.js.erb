@@ -41,8 +41,12 @@ Lrn.config(
 
     .state('nav.student_profile', {
       url: '/studentprofile',
-      templateUrl: 'student/profile.html',
-      controller: 'StudentController'
+      views: {
+        'content': {
+          templateUrl: 'student/profile.html',
+          controller: 'StudentController'
+        }
+      }
     })
 
   $urlRouterProvider.otherwise('/');
