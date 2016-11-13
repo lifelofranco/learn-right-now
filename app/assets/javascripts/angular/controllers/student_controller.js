@@ -18,4 +18,7 @@ Lrn.controller('StudentController', ['$scope', 'DemoService',
       formatted_date = formatted_date.join(' | ');
       return formatted_date;
     }
+
+    $scope.photo_html_string = "background-image:url(" + $scope.user_data.profile_photo + ")";
+    console.log($scope.photo_html_string);
 }]);
