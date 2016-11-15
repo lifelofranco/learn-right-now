@@ -45,4 +45,17 @@ Lrn.service('DemoService', ["$q", "$http",
         }
       ];
     };
+
+    this.ticket = function() {
+      return [
+        {
+          "title": "Early Bird",
+          "price": 200
+        },
+        {
+          "title": "Registration",
+          "price": 400
+        },
+      ];
+    };
 }]);
