@@ -1,0 +1,46 @@
+.pdf {
+  width: 900px;
+  margin: 50px auto;
+  .border {
+    border: 1px solid #eee;
+    img {
+      height: 200px;
+    }
+  }
+  .logo {
+    width: 80px;
+    height: 63px;
+  }
+  .other-info {
+    text-align: left;
+    margin-top: 50px;
+  }
+  .col-md-3 {
+    border-right: 1px solid #eee;
+    padding: 0;
+  }
+  h3, ul {
+    padding: 0;
+  }
+  h5, h6 {
+    font-size: 13px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .no-list-style {
+    list-style: none;
+  }
+  h6 {
+    text-align:center;
+  }
+  i {
+    margin-right: 6px;
+  }
+  li {
+    font-size: 12px;
+  }
+}
