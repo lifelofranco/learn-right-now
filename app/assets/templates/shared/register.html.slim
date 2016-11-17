@@ -1,6 +1,6 @@
 .login
   h2 Learn Right Now
-  form.login-form name="registerForm" novalidate=""
+  form.login-form name="registerForm" novalidate="" ng-submit="registerUser(registerForm.$valid)"
     .validation ng-messages="submitted && registerForm.firstName.$error"
       p ng-message="required"  Your First Name is required
       p ng-message="pattern"  Your First Name must not contain numbers or special characters
@@ -15,7 +15,7 @@
       p ng-message="required"  Your email is required
       p ng-message="pattern"  Your email is invalid
     .row-space-2 ng-class="{'has-error': registerForm.email.$dirty && registerForm.email.$invalid }"
-      input.form-control name="email" ng-model="register.email" ng-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/" placeholder="Email Address" required="" type="text" /
+      input.form-control name="email" ng-model="register.email" placeholder="Email Address" required="" type="text" /
     .validation ng-messages="submitted && registerForm.password.$error"
       p ng-message="required"  Your password is required
       p ng-message="minlength"  Your password should have at least 6 characters
@@ -26,4 +26,4 @@
     .row-space-2 ng-class="{ 'has-error': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid }"
       input.form-control name="confirmPassword" ng-model="register.confirm_password" ng-pattern="{{register.password}}" placeholder="Confirm password" required="" type="password" /
 
-    button.btn.login-btn formmethod="post" ng-click="submitRegisterFormregisterForm.$valid"  Sign up
+    button.btn.login-btn formmethod="post"  Sign up

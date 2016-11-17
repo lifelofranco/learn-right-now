@@ -1,28 +1,25 @@
-Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog',
-  function($scope, $location, DemoService, ngDialog) {
+Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog', '$cookies', '$window',
+  function($scope, $location, DemoService, ngDialog, $cookies, $window) {
 
     $scope.register = function() {
       ngDialog.open({ templateUrl: 'shared/register.html',
           className: 'ngdialog-theme-default',
           width: 500,
-          controller: ['$scope', function($scope) {
-            $scope.close = function() {
-              ngDialog.close();
-            }
-          }]
+          controller: 'AuthController'
         })
-    }
+    };
 
     $scope.login = function() {
       ngDialog.open({ templateUrl: 'shared/login.html',
           className: 'ngdialog-theme-default',
           width: 500,
-          controller: ['$scope', function($scope) {
-            $scope.close = function() {
-              ngDialog.close();
-            }
-          }]
+          controller: 'AuthController'
         })
-    }
+    };
+
+    $scope.logout = function() {
+        $cookies.remove("token");
+        $window.location.href="/";
+    };
 
 }])
