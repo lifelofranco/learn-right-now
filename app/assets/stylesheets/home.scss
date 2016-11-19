@@ -180,27 +180,23 @@
 }
 //
 form {
-  padding: 20px;
-  width: 50%;
-  margin: auto;
-
-  input[type="text"], input[type="email"] {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-family: $base-font;
-    border-bottom: 1px solid #cecfd3;
-    padding: 0px 0px 7px 7px;
-    font-size: 16px;
-  }
+  // input[type="text"], input[type="email"] {
+  //   border: none;
+  //   outline: none;
+  //   width: 100%;
+  //   font-family: $base-font;
+  //
+  //   padding: 0px 0px 7px 7px;
+  //   font-size: 16px;
+  // }
   .input:focus {
   	outline: none;
   }
   i {
-    float: right;
+    float: left;
     position: relative;
-    top: 27px;
-    right: 6px;
+    top: 35px;
+    left: 15px;
     color: #cecfd3;
   }
 
@@ -241,7 +237,7 @@ form {
   border: 1px solid #ea2f4c !important;
 }
 .ngdialog-content {
-  width: 500px;
+  width: 300px !important;
 }
 .check {
   padding-top: 30px;
@@ -266,4 +262,25 @@ form {
 }
 .close-icon {
   margin-right: 12px;
+}
+
+.gray {
+  color: #9d9d9d;;
+}
+
+.outline-button {
+  border-radius: 3px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 3px 10px;
+}
+
+.outline-button-gray {
+  border: solid 1px #9d9d9d;
+}
+
+.outline-button-gray:hover {
+  background-color: #9d9d9d;
+  color: #fff;
 }

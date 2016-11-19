@@ -1,15 +1,29 @@
 .login
-  h2 Learn Right Now
-  form.login-form name="loginForm" ng-hide="isNotYetActivated" ng-submit="submitLoginFormloginForm.$valid" novalidate=""
-    div ng-class="{'has-error': loginForm.email.$dirty && loginForm.email.$invalid }"
-      input.form-control name="email" ng-model="login.email" ng-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/" placeholder="Email Address" required="" type="text" /
-    .row-space-2 ng-messages="submitted && loginForm.email.$error"
+  =image_tag "logo.png", :class => "logo-img"
+  h3.gray Login
+  i.fa.fa-facebook-official
+  p.gray OR
+  form name="loginForm" ng-hide="isNotYetActivated" ng-submit="submitLoginFormloginForm.$valid" novalidate=""
+    .input-login ng-class="{'has-error': loginForm.email.$dirty && loginForm.email.$invalid }"
+      i.line-icon
+        | &#xe125;
+      input.form-control name="email" ng-model="login.email" ng-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/" placeholder="Email" required="" type="text" /
+    div ng-messages="submitted && loginForm.email.$error"
       p ng-message="required"  Your e-mail is required
       p ng-message="pattern"  Your e-mail is invalid
     div ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$invalid }"
+      i.line-icon
+        | &#xe019;
       input.form-control name="password" ng-model="login.password" placeholder="Password" required="" type="password" /
     .validation ng-messages="submitted && loginForm.password.$error"
       p ng-message="required"  Your password is required
-    button.btn.login-btn formmethod="post" type="submit"
-      i.fa.fa-envelope-o aria-hidden="true"
-      span Login with E-mail
+    button.btn.login-btn.row-space-top-4 formmethod="post" type="submit"
+      span SIGNIN
+    .row.row-space-top-3.signup-options
+      .col-md-4
+        button.btn.outline-button.outline-button-gray ng-click="signup()"
+          span SIGNUP
+      .col-md-7
+        button.btn.outline-button.outline-button-gray ng-click="password()"
+          span FORGOT YOUR PASSWORD
+    
