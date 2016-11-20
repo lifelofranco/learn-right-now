@@ -7,7 +7,7 @@ gem 'rails', '4.1.9'
 gem 'autoprefixer-rails'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -27,12 +27,11 @@ gem 'sprockets', '2.12.3'
 gem 'spring',        group: :development
 
 gem 'pg'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-ui-rails'
 gem 'angularjs-rails'
 gem 'bourbon'
 gem 'angular-rails-templates'
-gem 'susy'
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'slim'
 gem 'devise', '=3.3.0'
-gem 'twilio-ruby', '~> 3.12'
