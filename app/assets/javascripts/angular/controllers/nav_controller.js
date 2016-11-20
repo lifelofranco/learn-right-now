@@ -30,6 +30,7 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
       }
       else {
         $state.go('index');
+        $window.location.reload();
       }
     }
 }])
