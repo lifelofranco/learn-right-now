@@ -3,6 +3,11 @@ var Lrn = angular.module('Lrn', [
   'ngMessages',
   'ngDialog',
   'templates',
+  'ngCookies',
   'Lrn.controllers',
   'Lrn.services'
 ]);
+
+Lrn.run(['$rootScope', '$state', 'AuthService', '$location', function($rootScope, $state, AuthService, $location) {
+    AuthService.currentUser();
+}]);

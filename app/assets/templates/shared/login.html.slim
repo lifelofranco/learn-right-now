@@ -1,8 +1,8 @@
 .login
   h2 Learn Right Now
-  form.login-form name="loginForm" ng-hide="isNotYetActivated" ng-submit="submitLoginFormloginForm.$valid" novalidate=""
+  form.login-form name="loginForm" ng-hide="isNotYetActivated" ng-submit="loginUser(loginForm.$valid)" novalidate=""
     div ng-class="{'has-error': loginForm.email.$dirty && loginForm.email.$invalid }"
-      input.form-control name="email" ng-model="login.email" ng-pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/" placeholder="Email Address" required="" type="text" /
+      input.form-control name="email" ng-model="login.email" placeholder="Email Address" required="" type="text" /
     .row-space-2 ng-messages="submitted && loginForm.email.$error"
       p ng-message="required"  Your e-mail is required
       p ng-message="pattern"  Your e-mail is invalid
