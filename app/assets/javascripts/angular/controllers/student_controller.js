@@ -1,5 +1,7 @@
 Lrn.controller('StudentController', ['$scope', 'DemoService',
   function($scope, DemoService) {
+    var timestamp = $scope.user._id.toString().substring(0,8);
+    $scope.user.createdIn = new Date( parseInt( timestamp, 16 ) * 1000 )
 
     $scope.user_data = DemoService.dummyUserData()[0];
     $scope.full_name = $scope.user_data.first_name + " " + $scope.user_data.last_name;

@@ -27,8 +27,6 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
     $scope.goToProfile = function() {
       if($cookies.get("token")) {
         $state.go('nav.profile');
-        var timestamp = $scope.user._id.toString().substring(0,8);
-        $scope.user.createdIn = new Date( parseInt( timestamp, 16 ) * 1000 )
       }
       else {
         $state.go('index');
