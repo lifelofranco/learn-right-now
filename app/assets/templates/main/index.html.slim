@@ -1,15 +1,6 @@
-section.background
-  .header
-    a.pull-left href="/"
-      =image_tag "logo.png", :class => "logo"
-    ul.nav
-      li ng-click="gotoElement('mentees')" for mentees
-      li ng-click="gotoElement('mentors')" for mentors
-      li ng-click="gotoElement('what')" what we do
-      li ng-click="gotoElement('footer')" contact
-      li.pull-right
-        button.btn.register-btn ng-click="gotoElement('register')"
-          | register
+section.background#index
+  div ng-include="'shared/nav.html'"
+
   .container.home
     h1
       | We believe that everyone needs a mentor.
@@ -19,6 +10,8 @@ section.background
       | and join the hundreds of students who are
     h3.learn
       | learning right now.
+  .center
+    a.btn-view href="/class" View our list of classes
 section.mentees.bg-gray#mentees
   .container
     .row
@@ -75,21 +68,6 @@ section.mentor.bg-gray#mentors
             h2 3
             p.book
               | Let LRN facilitate the payment procedure.
-section#register
-  .container.center.row-space-top-4
-    h1 Register to LRN
-    form name="userDetail" ng-submit="user(userDetail.$valid)" novalidate=""
-      i.line-icon
-        | &#xe174;
-      input ng-class="{ 'error-now' : userDetail.first_name.$invalid && submitted }" name="first_name" type="text" placeholder="First name" ng-model="demo.user.first_name" required="" ng-pattern="/^[a-zA-Z ]+$/"
-      i.line-icon
-        | &#xe174;
-      input ng-class="{ 'error-now' : userDetail.last_name.$invalid && submitted }" name="last_name" type="text" placeholder="Last name" ng-model="demo.user.last_name" required="" ng-pattern="/^[a-zA-Z ]+$/"
-      i.line-icon
-        | &#xe125;
-      input ng-class="{ 'error-now' : userDetail.email.$invalid && submitted }" name="email" type="email" placeholder="Email" ng-model="demo.user.email" required=""
-      .row-space-top-4.row-space-4
-        button.btn.bg-blue.white type="submit" ng-disabled="userDetail.$invalid" Register
 section#footer.bg-orange
   .container
     .row.row-space-top-6

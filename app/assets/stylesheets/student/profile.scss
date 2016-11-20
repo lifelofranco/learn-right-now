@@ -1,0 +1,152 @@
+//colors
+$color_desert_storm_approx: #f7f8f8;
+$white: #fff;
+
+#user_profile_container {
+	background-color: $color_desert_storm_approx;
+	width: 100%;
+
+  #user_profile {
+		height: 150px;
+  	margin-top: 3%;
+
+		p {
+			font-family: 'Open Sans';
+	    color: #153C66;
+	    font-weight: 300;
+			margin-bottom: 20px;
+		}
+		span {
+			font-family: 'Open Sans';
+			font-weight: 300;
+		}
+
+		i {
+			margin-right: 15px;
+			font-size: 16px;
+			color: #153C66;
+		}
+
+		#user_photo_container {
+			width: 13vw;
+
+			#user_photo {
+				max-width: 100%;
+				width: 100%;
+				height: auto;
+				display: block;
+				padding-top: 100%;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 50%;
+				background-position-y: center;
+				background-position-x: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin: 0 auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+
+		#user_name {
+			font-size: 160%;
+		}
+
+		#user_details {
+			margin-left: 2%;
+
+			#email_location_container {
+				margin-top: -1%;
+				margin-bottom: 0.5%;
+
+				#location {
+					padding-left: 1%;
+				}
+			}
+
+			.user_details_beside_icon {
+				padding-left: 2%;
+				padding-right: 5%;
+			}
+		}
+  }
+}
+
+#dashboard_container {
+	padding-top: 1%;
+	padding-bottom: 4%;
+
+	.classes_container {
+		padding-top: 3%;
+
+		.class_category_title {
+			font-size: 130%;
+		}
+
+		.class_list_container {
+			padding-top: 1%;
+
+			.upcoming_class {
+				margin-bottom: 3%;
+
+				.event {
+					@include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
+					background: $white;
+					text-align: center;
+					padding-bottom: 2%;
+					margin-bottom: 2%;
+				}
+			}
+		}
+	}
+}
+
+.class_img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+.class_details {
+	p {
+		font-family: 'Open Sans';
+		font-weight: 300;
+		margin-bottom: 17px;
+	}
+
+	.class_title {
+		padding-top: 4%;
+		text-align: center;
+		font-weight: bold;
+	}
+
+}
+
+.upcoming_class_date_venue {
+	width: 100%;
+}
+
+@media screen and(max-width: 991px) {
+	#user_name {
+		font-size: 130%;
+	}
+
+	#user_profile {
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
+
+	#user_details {
+		margin-top: 0;
+		font-size: 90%;
+	}
+}
+
+@media screen and(max-width: 768px) {
+	.upcoming_class_location {
+		margin-top: -3%;
+	}
+}
