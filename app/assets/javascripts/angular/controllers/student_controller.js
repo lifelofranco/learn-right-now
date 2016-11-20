@@ -1,5 +1,8 @@
-Lrn.controller('StudentController', ['$scope', 'DemoService',
-  function($scope, DemoService) {
+Lrn.controller('StudentController', ['$scope', 'DemoService','$state',
+  function($scope, DemoService, $state) {
+    if(!$scope.user) {
+      $state.go('index');
+    }
     var timestamp = $scope.user._id.toString().substring(0,8);
     $scope.user.createdIn = new Date( parseInt( timestamp, 16 ) * 1000 )
 
