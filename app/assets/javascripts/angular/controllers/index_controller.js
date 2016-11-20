@@ -15,25 +15,25 @@ Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', '
      anchorSmoothScroll.scrollTo(eID);
    };
 
-   $scope.user = function() {
-
-    //  console.log($scope.demo)
-
-
-     UserService.subscribe($scope.demo.user).then(function(d) {
-       console.log(d)
-       ngDialog.open({ templateUrl: 'main/success.html',
-           className: 'ngdialog-theme-default',
-           width: 500,
-           controller: ['$scope', function($scope) {
-             $scope.close = function() {
-               ngDialog.close();
-             }
-           }]
-         })
-         $scope.userDetail.$setPristine();
-         $scope.demo.user = {};
-    });
-  }
+  //  $scope.user = function() {
+  //
+  //   //  console.log($scope.demo)
+  //
+  //
+  //    UserService.subscribe($scope.demo.user).then(function(d) {
+  //      console.log(d)
+  //      ngDialog.open({ templateUrl: 'main/success.html',
+  //          className: 'ngdialog-theme-default',
+  //          width: 500,
+  //          controller: ['$scope', function($scope) {
+  //            $scope.close = function() {
+  //              ngDialog.close();
+  //            }
+  //          }]
+  //        })
+  //        $scope.userDetail.$setPristine();
+  //        $scope.demo.user = {};
+  //   });
+  // }
 
 }]);
