@@ -24,11 +24,22 @@ Lrn.config(
       }
     })
 
+    .state('nav.checkout', {
+      url: '/checkout',
+      views: {
+        'content': {
+          templateUrl: 'class/checkout.html',
+          controller: 'CheckoutController'
+        }
+      }
+    })
+
     .state('nav.show', {
       url: '/class/show',
       views: {
         'content': {
-          templateUrl: 'class/show.html'
+          templateUrl: 'class/show.html',
+          controller: 'ClassController'
         }
       }
     })

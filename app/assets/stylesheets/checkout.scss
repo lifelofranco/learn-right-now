@@ -1,0 +1,64 @@
+.checkout {
+  font-family: $reg-font;
+
+  h4 {
+    font-family: $reg-font;
+    font-weight: 300;
+  }
+
+  .checkout-img {
+    width: 220px;
+  }
+
+  .summary {
+      label, span {
+        font-size: 16px;
+        font-family: 'Open Sans';
+      }
+  }
+
+  .order {
+    margin-top: 20px;
+    border: 1px solid #D5D5D3;
+    // width: 1000%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .order-header {
+    background: $gray;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+
+    h4 {
+      margin: 0;
+    }
+
+  }
+
+  .order-details {
+    padding: 20px;
+
+  }
+
+}
+.row-space {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+.btn-register {
+  background: $green;
+  color: white;
+  margin-top: 20px;
+  margin-right: 20px;
+
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: white;
+}
+.validation {
+    font-family: $reg-font;
+
+}

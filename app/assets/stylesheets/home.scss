@@ -179,35 +179,7 @@
   }
 }
 //
-form {
-  padding: 20px;
-  width: 50%;
-  margin: auto;
 
-  input[type="text"], input[type="email"] {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-family: $base-font;
-    border-bottom: 1px solid #cecfd3;
-    padding: 0px 0px 7px 7px;
-    font-size: 16px;
-  }
-  .input:focus {
-  	outline: none;
-  }
-  i {
-    float: right;
-    position: relative;
-    top: 27px;
-    right: 6px;
-    color: #cecfd3;
-  }
-
-  button {
-    border-radius: 20px;
-  }
-}
 #register {
   button:hover, button:focus {
     color: white;
@@ -231,6 +203,36 @@ form {
   }
   i {
     margin-right: 12px;
+  }
+
+  form {
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+
+    input[type="text"], input[type="email"] {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-family: $base-font;
+      border-bottom: 1px solid #cecfd3;
+      padding: 0px 0px 7px 7px;
+      font-size: 16px;
+    }
+    .input:focus {
+    	outline: none;
+    }
+    i {
+      float: right;
+      position: relative;
+      top: 27px;
+      right: 6px;
+      color: #cecfd3;
+    }
+
+    button {
+      border-radius: 20px;
+    }
   }
 }
 

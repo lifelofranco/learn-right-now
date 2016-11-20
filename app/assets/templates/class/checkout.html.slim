@@ -1,0 +1,91 @@
+.container.row-space-top-6.checkout
+  .row
+    .col-md-3.col-md-offset-3
+      .center
+        =image_tag "class.png", :class=> "checkout-img"
+    .col-md-6
+      h4.bold
+        | Social Media Marketing
+      h4
+        | Ateneo de Manila University
+      h4
+        | Tuesday, June 8, 2016
+      h4
+        | Quezon City, Philippines
+  .row
+    .col-md-8
+      .order
+        .order-header
+          h4 Order Summary
+        .order-details.summary
+          .row
+            .col-md-6
+              label for="Type" Type:
+              span
+                |  Registration
+            .col-md-6
+              label for="Quantity" Quantity:
+              span
+                |  3
+      .order
+        .order-header
+          h4 Registration Information
+        .order-details
+          h4.row-space-4 Your Information
+          form name="orderForm" novalidate="" ng-submit="submitForm()"
+            .row.row-space
+              .no-padding.col-md-6
+                label for="firstName" First Name
+                input.form-control type="text" ng-model="member.firstName" name= "firstName" required= "" placeholder= "Angela" ng-pattern="/^[a-zA-Z ]+$/"
+                span.validation
+                  .row-space-top-1 ng-show="submitted && orderForm.firstName.$error"
+                    div ng-show="orderForm.firstName.$error.required"
+                      i.fa.fa-exclamation-circle
+                      |  First name is required
+                    div ng-show="orderForm.firstName.$error.pattern"
+                      i.fa.fa-exclamation-circle
+                      |  Please enter a valid first name
+              .col-md-6
+                label for="lastName" Last Name
+                input.form-control type="text" ng-model="member.lastName" name="lastName" required="" placeholder= "Rosario" ng-pattern="/^[a-zA-Z ]+$/"
+                span.validation
+                  .row-space-top-1 ng-show="submitted && orderForm.lastName.$error"
+                    div ng-show="orderForm.lastName.$error.required"
+                      i.fa.fa-exclamation-circle
+                      |  Last name is required
+                    div ng-show="orderForm.lastName.$error.pattern"
+                      i.fa.fa-exclamation-circle
+                      |  Please enter a valid last name
+            .row.row-space
+              .no-padding.col-md-6
+                label for="emailAddress" Email Address
+                input.form-control type="email" ng-model="member.emailAddress" name= "emailAddress" required= "" placeholder= "angelarosario@gmail.com"
+                span.validation
+                  .row-space-top-1 ng-show="submitted && orderForm.emailAddress.$error.required"
+                    i.fa.fa-exclamation-circle
+                    |  Please enter a valid email Address
+            .row
+              .pull-right
+                button.btn.btn-register ng-click="submitted=true" ng-disabled="submitted && orderForm.$invalid"
+                  | Complete Registration
+    .col-md-4
+      .order
+        .order-header
+          h4 Date and Venue
+        .order-details.description
+          p
+            | Ateneo de Manila University
+            |  Katipunan Avenue
+            |  Quezon City, NCR 1108
+          p
+            | Sat, October 15, 2016
+            |  8:00 AM – 12:00 PM PHT
+      .order
+        .order-header
+          h4 Description
+        .order-details.description
+          p
+            | In this day and age, traditional marketing and advertising just won't cut it.
+            |  For you to take your business to the next level, you're going to have to bring it into the digital world.
+            |  Learn how to market effectively, efficiently and professionally in the digital world from experts of the Ateneo Business Resource Center.
+            |  Learn from the best to be the best.
