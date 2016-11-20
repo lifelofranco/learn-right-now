@@ -3,7 +3,7 @@
     .col-md-3
       .filter
         .form-group.search
-          input.form-control.search-bar type="search" placeholder="Search Classes"
+          input.form-control.search-bar type="search" placeholder="Search Classes" ng-model="name"
           i.line-icon.search-icon
             | &#xe01f;
         .add-padding-left
@@ -30,7 +30,7 @@
 
     .col-md-9
       h3 Classes For You
-      .card ng-repeat="card in cards"
+      .card ng-repeat="card in cards | filter: {title: name}"
         a href="/class/show"
           .event
             .image
