@@ -32,5 +32,6 @@ gem 'jquery-ui-rails'
 gem 'angularjs-rails'
 gem 'bourbon'
 gem 'angular-rails-templates'
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'slim'
 gem 'devise', '=3.3.0'

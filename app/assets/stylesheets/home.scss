@@ -72,11 +72,17 @@
 }
 
 .btn-view {
-  color: white;
+  color: #153C66;
+  background: #F4D35E;
   border: 1px solid white;
+  font-size: 12px;
+font-weight: 700;
   border-radius: 8px;
   padding: 10px;
   font-family: 'Open Sans';
+}
+.btn-view:hover, .btn-view:focus {
+  text-decoration: none;
 }
 
 .italic {
@@ -179,16 +185,8 @@
   }
 }
 //
+
 form {
-  // input[type="text"], input[type="email"] {
-  //   border: none;
-  //   outline: none;
-  //   width: 100%;
-  //   font-family: $base-font;
-  //
-  //   padding: 0px 0px 7px 7px;
-  //   font-size: 16px;
-  // }
   .input:focus {
   	outline: none;
   }
@@ -199,11 +197,6 @@ form {
     left: 15px;
     color: #cecfd3;
   }
-
-  button {
-    border-radius: 20px;
-  }
-}
 #register {
   button:hover, button:focus {
     color: white;
@@ -227,6 +220,36 @@ form {
   }
   i {
     margin-right: 12px;
+  }
+
+  form {
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+
+    input[type="text"], input[type="email"] {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-family: $base-font;
+      border-bottom: 1px solid #cecfd3;
+      padding: 0px 0px 7px 7px;
+      font-size: 16px;
+    }
+    .input:focus {
+    	outline: none;
+    }
+    i {
+      float: right;
+      position: relative;
+      top: 27px;
+      right: 6px;
+      color: #cecfd3;
+    }
+
+    button {
+      border-radius: 20px;
+    }
   }
 }
 
@@ -263,7 +286,6 @@ form {
 .close-icon {
   margin-right: 12px;
 }
-
 .gray {
   color: #9d9d9d;;
 }
@@ -283,4 +305,10 @@ form {
 .outline-button-gray:hover {
   background-color: #9d9d9d;
   color: #fff;
+
+#index {
+  header {
+    background: transparent;
+    border: none;
+  }
 }

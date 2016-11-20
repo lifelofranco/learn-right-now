@@ -10,8 +10,7 @@ Lrn.config(
 
     .state('nav', {
       abstract: true,
-      templateUrl: 'shared/nav.html',
-      controller: 'NavController'
+      templateUrl: 'shared/nav.html'
     })
 
     .state('nav.class', {
@@ -24,11 +23,22 @@ Lrn.config(
       }
     })
 
+    .state('nav.checkout', {
+      url: '/checkout',
+      views: {
+        'content': {
+          templateUrl: 'class/checkout.html',
+          controller: 'CheckoutController'
+        }
+      }
+    })
+
     .state('nav.show', {
       url: '/class/show',
       views: {
         'content': {
-          templateUrl: 'class/show.html'
+          templateUrl: 'class/show.html',
+          controller: 'ClassController'
         }
       }
     })
@@ -42,6 +52,16 @@ Lrn.config(
       url: '/subscribers',
       templateUrl: 'main/list.html',
       controller: 'ListController'
+    })
+
+    .state('nav.profile', {
+      url: '/profile',
+      views: {
+        'content': {
+          templateUrl: 'student/profile.html',
+          controller: 'StudentController'
+        }
+      }
     })
 
   $urlRouterProvider.otherwise('/');

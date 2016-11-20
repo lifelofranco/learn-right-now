@@ -8,7 +8,7 @@
 //= require angular-animate
 //= require_tree ./components
 //= require angular-rails-templates
-
+//= require angular-cookies.min
 
 //= require angular-ui-router
 //= require angular/app

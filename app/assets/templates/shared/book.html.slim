@@ -1,0 +1,22 @@
+.book
+  .modal-header
+    h3 Book Tickets
+  form.content name="checkoutForm" ng-submit="checkout()" novalidate=""
+    .ticket-cont ng-repeat="ticket in tickets"
+      .pull-left
+        h4
+          | {{ticket.title}}
+        p.price
+          | ₱ {{ticket.price}}
+      .pull-right
+        select.quantity
+          option value="0" 0
+          option value="1" 1
+          option value="2" 2
+          option value="3" 3
+          option value="4" 4
+          option value="5" 5
+          option value="6" 6
+    .checkout.row
+      button.btn.pull-right.check-btn type="submit"
+        | Checkout
