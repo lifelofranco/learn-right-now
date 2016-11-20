@@ -1,12 +1,12 @@
 section.background
   .header
     a.pull-left href="/"
-      =image_tag "logo.png", :class => "logo"
+      =image_tag "logo.png", :class => "logo-img"
     ul.nav
-      li ng-click="gotoElement('mentees')" for mentees
-      li ng-click="gotoElement('mentors')" for mentors
-      li ng-click="gotoElement('what')" what we do
-      li ng-click="gotoElement('footer')" contact
+      li.links ng-click="gotoElement('mentees')" for mentees
+      li.links ng-click="gotoElement('mentors')" for mentors
+      li.links ng-click="gotoElement('what')" what we do
+      li.links ng-click="gotoElement('footer')" contact
       li.pull-right
         button.btn.register-btn ng-click="gotoElement('register')"
           | register
@@ -19,6 +19,8 @@ section.background
       | and join the hundreds of students who are
     h3.learn
       | learning right now.
+  .center
+    a.btn-view href="/class" View our list of classes
 section.mentees.bg-gray#mentees
   .container
     .row

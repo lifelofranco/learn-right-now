@@ -1,0 +1,129 @@
+// still need to transfer nav css
+
+
+.nav {
+  height: 100%;
+}
+
+.logo {
+  padding: 13px 50px 12px;
+}
+header {
+  height: 70px;
+  padding: 0 !important;
+  border-bottom: 1px solid #cfcfcf;
+  background: #153C66;
+
+  .links {
+    line-height: 51px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 300;
+    height: 100%;
+    margin: 0;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+  .btn-links {
+    margin-top: 11px;
+    margin-right: 45px;
+
+    li {
+      margin-left: 30px;
+    }
+  }
+}
+// .header:hover {
+//   background: white;
+//
+//   li {
+//     color: black;
+//   }
+// }
+
+//modal
+.login {
+  text-align: center;
+  padding: 20px;
+
+  .btn:focus, .btn:hover {
+      color: white;
+  }
+
+  .fa-facebook-official {
+    font-size: 35px;
+    color: #4862a3;
+  }
+
+  p {
+    font-size: 13px;
+    margin-bottom: -20px;
+    margin-top: 10px;
+  }
+
+  .ng-valid.ng-dirty {
+      border-color: #008000;
+  }
+  a {
+      color: $green;
+  }
+  .validation {
+      text-align: left;
+
+      p {
+          margin: 2px 0;
+      }
+  }
+
+  input {
+    border-radius: 0px;
+    border-top: 1px solid #cccccc;
+    padding: 0px 37px;
+    height: 44px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: 300;
+  }
+  .confirm {
+      color: $gray;
+  }
+  .create {
+      color: $green;
+      cursor: pointer;
+  }
+  .login-btn {
+    background: $blue;
+    color: white;
+    padding: 13px 33px 11px 33px;
+    border-radius: 2px;
+    width: 100%;
+  }
+
+  h3 {
+    margin: 20px 0 10px 0;
+    font-weight: 300;
+    font-size: 23px;
+  }
+}
+
+.input-login {
+  height: 43px;
+}
+
+.signup-options {
+  button {
+    border-radius: 12px;
+    line-height: 11px;
+  }
+
+  span {
+    font-size: 11px;
+  }
+
+}

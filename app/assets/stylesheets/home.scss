@@ -1,14 +1,13 @@
 
-.header {
+.header,header {
   padding: 18px 50px;
 
 
-  .nav>li {
+  li {
     list-style-type: none;
     display: inline-block;
     color: $yellow;
     margin-left: 50px;
-    margin-top: 10px;
     font-family: 'Brandon';
     font-size: 18px;
     cursor: pointer;
@@ -34,13 +33,13 @@
 .yellow {
   color: $yellow;
 }
-.logo {
+.logo-img {
   width: 62px;
 }
 .background {
   background-image: asset-url('bg.png');
   height: 100%;
-  min-height: 632px;
+  min-height: 680px;
   z-index: 1;
   background-size: cover;
   background-position: 50% 50%;
@@ -48,7 +47,7 @@
 .home {
   text-align: center;
   padding-top: 50px;
-  padding-bottom: 285px;
+  margin-bottom: 100px;
 
   h1 {
     font-size: 42px;
@@ -71,6 +70,15 @@
   }
 
 }
+
+.btn-view {
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: 'Open Sans';
+}
+
 .italic {
   font-style: italic;
 }
@@ -172,27 +180,23 @@
 }
 //
 form {
-  padding: 20px;
-  width: 50%;
-  margin: auto;
-
-  input[type="text"], input[type="email"] {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-family: $base-font;
-    border-bottom: 1px solid #cecfd3;
-    padding: 0px 0px 7px 7px;
-    font-size: 16px;
-  }
+  // input[type="text"], input[type="email"] {
+  //   border: none;
+  //   outline: none;
+  //   width: 100%;
+  //   font-family: $base-font;
+  //
+  //   padding: 0px 0px 7px 7px;
+  //   font-size: 16px;
+  // }
   .input:focus {
   	outline: none;
   }
   i {
-    float: right;
+    float: left;
     position: relative;
-    top: 27px;
-    right: 6px;
+    top: 35px;
+    left: 15px;
     color: #cecfd3;
   }
 
@@ -233,7 +237,7 @@ form {
   border: 1px solid #ea2f4c !important;
 }
 .ngdialog-content {
-  width: 500px;
+  width: 300px !important;
 }
 .check {
   padding-top: 30px;
@@ -258,4 +262,25 @@ form {
 }
 .close-icon {
   margin-right: 12px;
+}
+
+.gray {
+  color: #9d9d9d;;
+}
+
+.outline-button {
+  border-radius: 3px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 3px 10px;
+}
+
+.outline-button-gray {
+  border: solid 1px #9d9d9d;
+}
+
+.outline-button-gray:hover {
+  background-color: #9d9d9d;
+  color: #fff;
 }
