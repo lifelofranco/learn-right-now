@@ -52,7 +52,6 @@
   h1 {
     font-size: 42px;
     color: white;
-    // font-family: 'Open Sans';
     font-weight: lighter;
   }
   h3 {
@@ -142,6 +141,11 @@
     display: inline-block;
     margin: 0 15px 40px 0;
     width: 60px;
+  }
+
+  .class_img {
+    width: 100%;
+    height: auto;
   }
 
   p {
@@ -268,4 +272,26 @@
 }
 .close-icon {
   margin-right: 12px;
+}
+
+#featured_classes_section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.featured_classes {
+  margin-top: 30px;
+}
+
+.featured_class {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.class_title {
+  font-family: Brandon;
+  font-size: 50%;
+  font-weight: normal;
 }

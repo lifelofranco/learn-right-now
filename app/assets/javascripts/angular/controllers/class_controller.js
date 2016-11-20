@@ -12,8 +12,6 @@ Lrn.controller('ClassController', ['$scope', '$location', 'DemoService', 'ngDial
       this.prices = !this.prices;
     }
 
-
-
     $scope.cards = DemoService.class();
 
     $scope.book = function() {

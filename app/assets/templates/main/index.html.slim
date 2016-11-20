@@ -21,26 +21,18 @@ section.background
       | learning right now.
   .center
     a.btn-view href="/class" View our list of classes
-section.mentees.bg-gray#mentees
+section.bg-gray#featured_classes_section
   .container
     .row
-      .col-md-6.padding
-        h2 For Mentees
-        .instructions
-          .steps
-            h2 1
-            p
-              | Search your desired topic and browse through a wide array of mentors/classes.
-          .steps
-            h2 2
-            p.row-space-top-4
-              | Message your mentor regarding your specific needs
-          .steps
-            h2 3
-            p.book
-              | Book your chosen mentor or class.
-      .col-md-5.col-md-offset-1.center.row-space-top-6
-        = image_tag "student.png", :class => "mentee"
+        h2 Featured Classes
+        .featured_classes.row
+          .featured_class_container.col-md-3.col-sm-4 ng-repeat="featuredClass in featuredClasses"
+            .featured_class
+              img.class_img ng-src="{{featuredClass.image}}"
+              .class_details
+                p.class_title.ellipsis
+                  | {{featuredClass.title}}
+
 section#what
   .container
     .features.col-md-4.col-sm-12
