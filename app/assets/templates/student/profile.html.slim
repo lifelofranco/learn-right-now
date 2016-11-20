@@ -4,21 +4,23 @@
       #user_photo style="{{photo_html_string}}"
     #user_details.col-md-7.col-sm-7.col-xs-7
       p#user_name
-        | {{ full_name }}
+        | {{user.firstName}} {{user.lastName}}
       p#membership
-        | Member since  {{ month_joined }} {{ year_joined }}
+        | Member since 
+        span ng-bind= "user.createdIn | date:'MMMM d, yyyy'"
+          |  {{user.createdIn}}
       #email_location_container
         i.fa.fa-envelope-o aria-hidden="true"
         span#email.user_details_beside_icon
-          | {{ user_data.email }}
-        i.fa.fa-map-marker aria-hidden="true"
-        span#location.user_details_beside_icon
-          | {{ user_data.location }}
-      #user_interests_container
-        i.fa.fa-heart-o aria-hidden="true"
-        span#interests.user_details_beside_icon
-          span ng-repeat="interest in user_data.interests"
-            | {{interest}}{{$last ? '' : ', '}}
+          | {{ user.email}}
+      /!i.fa.fa-map-marker aria-hidden="true"
+      /!span#location.user_details_beside_icon
+      /!  | {{ user_data.location }}
+      /!#user_interests_container
+      /!  i.fa.fa-heart-o aria-hidden="true"
+      /!  span#interests.user_details_beside_icon
+      /!  span ng-repeat="interest in user_data.interests"
+      /!    | {{interest}}{{$last ? '' : ', '}}
 #dashboard_container
   #upcoming_classes_container.container.classes_container ng-show=("upcoming_classes.length > 0")
     p.class_category_title UPCOMING CLASSES

@@ -10,8 +10,7 @@ Lrn.config(
 
     .state('nav', {
       abstract: true,
-      templateUrl: 'shared/nav.html',
-      controller: 'NavController'
+      templateUrl: 'shared/nav.html'
     })
 
     .state('nav.class', {
@@ -50,8 +49,8 @@ Lrn.config(
       controller: 'ListController'
     })
 
-    .state('nav.student_profile', {
-      url: '/studentprofile',
+    .state('nav.profile', {
+      url: '/profile',
       views: {
         'content': {
           templateUrl: 'student/profile.html',
