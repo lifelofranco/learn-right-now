@@ -1,5 +1,5 @@
-Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog', '$cookies', '$window',
-  function($scope, $location, DemoService, ngDialog, $cookies, $window) {
+Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog', '$cookies', '$state', '$window',
+  function($scope, $location, DemoService, ngDialog, $cookies, $state, $window) {
 
     $scope.register = function() {
       ngDialog.open({ templateUrl: 'shared/register.html',
@@ -22,4 +22,16 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
         $window.location.href="/";
     };
 
+
+
+    $scope.goToProfile = function() {
+      if($cookies.get("token")) {
+        $state.go('nav.profile');
+        var timestamp = $scope.user._id.toString().substring(0,8);
+        $scope.user.createdIn = new Date( parseInt( timestamp, 16 ) * 1000 )
+      }
+      else {
+        $state.go('index');
+      }
+    }
 }])

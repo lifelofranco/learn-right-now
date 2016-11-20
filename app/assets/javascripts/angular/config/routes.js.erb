@@ -10,8 +10,7 @@ Lrn.config(
 
     .state('nav', {
       abstract: true,
-      templateUrl: 'shared/nav.html',
-      controller: 'NavController'
+      templateUrl: 'shared/nav.html'
     })
 
     .state('nav.class', {
@@ -48,6 +47,16 @@ Lrn.config(
       url: '/subscribers',
       templateUrl: 'main/list.html',
       controller: 'ListController'
+    })
+
+    .state('nav.profile', {
+      url: '/profile',
+      views: {
+        'content': {
+          templateUrl: 'student/profile.html',
+          controller: 'StudentController'
+        }
+      }
     })
 
   $urlRouterProvider.otherwise('/');

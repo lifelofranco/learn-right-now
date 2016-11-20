@@ -1,0 +1,46 @@
+#user_profile_container.container
+  #user_profile.row
+    #user_photo_container.col-md-offset-3.col-md-1.col-sm-offset-3.col-sm-1.col-xs-offset-1.col-xs-3
+      #user_photo style="{{photo_html_string}}"
+    #user_details.col-md-7.col-sm-7.col-xs-7
+      p#user_name
+        | {{user.firstName}} {{user.lastName}}
+      p#membership
+        | Member since 
+        span ng-bind= "user.createdIn | date:'MMMM d, yyyy'"
+          |  {{user.createdIn}}
+      #email_location_container
+        i.fa.fa-envelope-o aria-hidden="true"
+        span#email.user_details_beside_icon
+          | {{ user.email}}
+      /!i.fa.fa-map-marker aria-hidden="true"
+      /!span#location.user_details_beside_icon
+      /!  | {{ user_data.location }}
+      /!#user_interests_container
+      /!  i.fa.fa-heart-o aria-hidden="true"
+      /!  span#interests.user_details_beside_icon
+      /!  span ng-repeat="interest in user_data.interests"
+      /!    | {{interest}}{{$last ? '' : ', '}}
+#dashboard_container
+  #upcoming_classes_container.container.classes_container ng-show=("upcoming_classes.length > 0")
+    p.class_category_title UPCOMING CLASSES
+    #upcoming_classes.row.class_list_container
+      .upcoming_class.col-md-3.col-sm-4 ng-repeat="upcoming_class in upcoming_classes"
+        .event
+          img.class_img ng-src="{{upcoming_class.image}}"
+          .class_details
+            p.class_title.ellipsis
+              | {{upcoming_class.title}}
+            p.upcoming_class_date
+              | {{format_date_class(upcoming_class.date)}}
+            p.upcoming_class_location
+              | {{upcoming_class.location}}
+  #past_classes_container.container.classes_container ng-show=("past_classes.length > 0")
+    p.class_category_title PAST CLASSES
+    #past_classes.row.class_list_container
+      .past_class.col-md-3.col-sm-3 ng-repeat=("past_class in past_classes")
+        .event
+          img.class_img ng-src="{{past_class.image}}"
+          .class_details
+            p.class_title.ellipsis
+              | {{past_class.title}}
