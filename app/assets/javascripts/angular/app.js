@@ -3,6 +3,7 @@ var Lrn = angular.module('Lrn', [
   'ngMessages',
   'ngDialog',
   'templates',
+  'ngProgress',
   'ngCookies',
   'Lrn.controllers',
   'Lrn.services'
