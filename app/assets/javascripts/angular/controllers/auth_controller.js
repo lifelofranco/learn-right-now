@@ -2,6 +2,7 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
   function($scope, $location, AuthService, ngDialog) {
 
     $scope.registerUser = function(valid) {
+      $scope.submitted = true;
 
         if (valid) {
           var payload = {
@@ -16,6 +17,7 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
     };
 
     $scope.loginUser = function(valid) {
+      $scope.submitted = true;
         if (valid) {
           var payload = {
             email: $scope.login.email,
@@ -25,5 +27,14 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
         }
 
     };
+
+    $scope.signup = function() {
+      ngDialog.close()
+      ngDialog.open({ templateUrl: 'shared/register.html',
+          className: 'ngdialog-theme-default',
+          width: 300,
+          controller: 'AuthController'
+        })
+    }
 
 }])

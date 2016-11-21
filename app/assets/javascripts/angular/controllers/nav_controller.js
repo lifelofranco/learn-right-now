@@ -4,7 +4,7 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
     $scope.register = function() {
       ngDialog.open({ templateUrl: 'shared/register.html',
           className: 'ngdialog-theme-default',
-          width: 500,
+          width: 300,
           controller: 'AuthController'
         })
     };
@@ -12,7 +12,7 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
     $scope.login = function() {
       ngDialog.open({ templateUrl: 'shared/login.html',
           className: 'ngdialog-theme-default',
-          width: 500,
+          width: 300,
           controller: 'AuthController'
         })
     };

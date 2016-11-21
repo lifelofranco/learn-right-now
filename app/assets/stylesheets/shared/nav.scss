@@ -52,10 +52,6 @@ header {
   text-align: center;
   padding: 20px;
 
-  .btn:focus, .btn:hover {
-      color: white;
-  }
-
   .fa-facebook-official {
     font-size: 35px;
     color: #4862a3;
@@ -75,6 +71,7 @@ header {
   }
   .validation {
       text-align: left;
+      margin-bottom: 0;
 
       p {
           margin: 2px 0;
