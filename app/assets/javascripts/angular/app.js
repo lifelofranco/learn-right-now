@@ -13,6 +13,7 @@ Lrn.run(['$rootScope', '$state', 'AuthService', '$location', 'ngProgressFactory'
     AuthService.currentUser();
 
     $rootScope.progressbar = ngProgressFactory.createInstance();
+    $rootScope.progressbar.setColor('#77B6FF');
 
    $rootScope.$on("$stateChangeStart", function () {
        $rootScope.progressbar.start();
