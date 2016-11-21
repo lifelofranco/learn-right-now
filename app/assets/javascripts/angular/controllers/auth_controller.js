@@ -5,6 +5,7 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
       $scope.submitted = true;
 
         if (valid) {
+          $scope.withError = false
           var payload = {
             email: $scope.register.email,
             firstName: $scope.register.firstName,
@@ -14,17 +15,26 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
           AuthService.register(payload);
         }
 
+        else {
+          $scope.withError = true
+        }
+
     };
 
     $scope.loginUser = function(valid) {
       $scope.submitted = true;
         if (valid) {
+          $scope.withError = false
           var payload = {
             email: $scope.login.email,
             password: $scope.login.password
           }
           AuthService.login(payload);
         }
+        else {
+          $scope.withError = true
+        }
+
 
     };
 
