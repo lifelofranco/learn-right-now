@@ -1,7 +1,7 @@
 Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialog', 'ngProgressFactory',
   function($scope, $location, AuthService, ngDialog, ngProgressFactory) {
     $scope.progressbar = ngProgressFactory.createInstance();
-    $scope.progressbar.color('#77B6FF');
+    $scope.progressbar.setColor('#77B6FF');
 
     $scope.registerUser = function(valid) {
 
