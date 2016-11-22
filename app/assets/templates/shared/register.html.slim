@@ -1,29 +1,44 @@
 .login
-  h2 Learn Right Now
-  form.login-form name="registerForm" novalidate="" ng-submit="registerUser(registerForm.$valid)"
-    .validation ng-messages="submitted && registerForm.firstName.$error"
-      p ng-message="required"  Your First Name is required
-      p ng-message="pattern"  Your First Name must not contain numbers or special characters
-    .row-space-2 ng-class="{'has-error': registerForm.firstName.$dirty && registerForm.firstName.$invalid }"
-      input.form-control name="firstName" ng-model="register.firstName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="First Name" required="" type="text" /
-    .validation ng-messages="submitted && registerForm.lastName.$error"
+  =image_tag "logo.png", :class => "logo-img"
+  h3.gray Signup
+  i.fa.fa-facebook-official
+  p.gray OR
+  
+  .validation ng-class="{'alert alert-danger row-space-top-7': submitted && registerForm.firstName.$error}" ng-messages="submitted && registerForm.firstName.$error"
+    p ng-message="required"  Your First Name is required
+    p ng-message="pattern"  Your First Name must not contain numbers or special characters
+    div ng-messages="submitted && loginForm.password.$error"
+      p ng-message="required"  Your password is required
+    div ng-messages="submitted && registerForm.lastName.$error"
       p ng-message="required"  Your Last Name is required
       p ng-message="pattern"  Your Last Name must not contain numbers or special characters
-    .row-space-2 ng-class="{'has-error': registerForm.lastName.$dirty && registerForm.lastName.$invalid }"
-      input.form-control name="lastName" ng-model="register.lastName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="Last Name" required="" type="text" /
-    .validation ng-messages="submitted && registerForm.email.$error"
+    div ng-messages="submitted && registerForm.email.$error"
       p ng-message="required"  Your email is required
       p ng-message="pattern"  Your email is invalid
-    .row-space-2 ng-class="{'has-error': registerForm.email.$dirty && registerForm.email.$invalid }"
-      input.form-control name="email" ng-model="register.email" placeholder="Email Address" required="" type="text" /
-    .validation ng-messages="submitted && registerForm.password.$error"
+    div ng-messages="submitted && registerForm.password.$error"
       p ng-message="required"  Your password is required
       p ng-message="minlength"  Your password should have at least 6 characters
-    .row-space-2 ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$invalid }"
-      input.form-control name="password" ng-minlength="6" ng-model="register.password" placeholder="Password" required="" type="password" /
-    .validation ng-show="submitted && register.password != register.confirm_password"
+    div ng-show="submitted && register.password != register.confirm_password"
       p Passwords do not match.
-    .row-space-2 ng-class="{ 'has-error': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid }"
-      input.form-control name="confirmPassword" ng-model="register.confirm_password" ng-pattern="{{register.password}}" placeholder="Confirm password" required="" type="password" /
-
-    button.btn.login-btn formmethod="post"  Sign up
+  form.login-form name="registerForm" ng-hide="isNotYetActivated" ng-submit="registerUser(registerForm.$valid)" novalidate=""
+    .input-login ng-class="{'has-error': registerForm.firstName.$dirty && registerForm.firstName.$invalid  && submitted }"
+      i.line-icon
+        | &#xe174;
+      input.form-control name="firstName" ng-model="register.firstName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="First Name" required="" type="text" 
+    .input-login ng-class="{'has-error': registerForm.lastName.$dirty && registerForm.lastName.$invalid  && submitted  }"
+      i.line-icon
+        | &#xe174;
+      input.form-control name="lastName" ng-model="register.lastName" ng-pattern="/^[a-zA-Z ]+$/" placeholder="Last Name" required="" type="text" 
+    .input-login ng-class="{'has-error': registerForm.email.$dirty && registerForm.email.$invalid  && submitted  }"
+      i.line-icon
+        | &#xe125;
+      input.form-control name="email" ng-model="register.email" placeholder="Email Address" required="" type="email" 
+    .input-login ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$invalid  && submitted }"
+      i.line-icon
+        | &#xe019;
+      input.form-control name="password" ng-minlength="6" ng-model="register.password" placeholder="Password" required="" type="password" 
+    .input-login ng-class="{ 'has-error': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid  && submitted  }"
+      i.line-icon
+        | &#xe019;
+      input.form-control name="confirmPassword" ng-model="register.confirm_password" ng-pattern="{{register.password}}" placeholder="Confirm password" required="" type="password" 
+    button.btn.login-btn.row-space-top-7 type="submit"  Sign up
