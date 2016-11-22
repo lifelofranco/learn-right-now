@@ -7,8 +7,25 @@ $white: #fff;
 	width: 100%;
 
   #user_profile {
-  	margin-top: 2%;
-  	margin-bottom: 2%;
+		height: 150px;
+  	margin-top: 3%;
+
+		p {
+			font-family: 'Open Sans';
+	    color: #153C66;
+	    font-weight: 300;
+			margin-bottom: 20px;
+		}
+		span {
+			font-family: 'Open Sans';
+			font-weight: 300;
+		}
+
+		i {
+			margin-right: 15px;
+			font-size: 16px;
+			color: #153C66;
+		}
 
 		#user_photo_container {
 			width: 13vw;
@@ -91,19 +108,21 @@ $white: #fff;
 	height: auto;
 }
 
-.class_title {
-	padding-top: 4%;
-	font-size: 110%;
-	text-align: center;
-	font-weight: bold;
-}
 
-.upcoming_class_date {
-	margin-top: -2%;
-}
 
-.upcoming_class_location {
-	margin-top: -5%;
+.class_details {
+	p {
+		font-family: 'Open Sans';
+		font-weight: 300;
+		margin-bottom: 17px;
+	}
+
+	.class_title {
+		padding-top: 4%;
+		text-align: center;
+		font-weight: bold;
+	}
+
 }
 
 .upcoming_class_date_venue {
