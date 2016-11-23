@@ -1,7 +1,7 @@
 .book
   .modal-header
     h3 Book Tickets
-  form.content name="checkoutForm" ng-submit="checkout()" novalidate=""
+  form.content name="checkoutForm" novalidate="" ng-submit="confirm(tickets)" 
     .ticket-cont ng-repeat="ticket in tickets"
       .pull-left
         h4
@@ -9,7 +9,7 @@
         p.price
           | ₱ {{ticket.price}}
       .pull-right
-        select.quantity
+        select.quantity ng-model="ticket.quantity"
           option value="0" 0
           option value="1" 1
           option value="2" 2
