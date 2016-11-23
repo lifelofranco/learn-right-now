@@ -71,11 +71,17 @@
 }
 
 .btn-view {
-  color: white;
+  color: #153C66;
+  background: #F4D35E;
   border: 1px solid white;
+  font-size: 12px;
+font-weight: 700;
   border-radius: 8px;
   padding: 10px;
   font-family: 'Open Sans';
+}
+.btn-view:hover, .btn-view:focus {
+  text-decoration: none;
 }
 
 .italic {
@@ -294,4 +300,10 @@
   font-family: Brandon;
   font-size: 50%;
   font-weight: normal;
+
+#index {
+  header {
+    background: transparent;
+    border: none;
+  }
 }
