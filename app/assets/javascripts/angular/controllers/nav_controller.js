@@ -43,6 +43,7 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
                 }).then(function (tickets) {
                   console.log(tickets)
                     $scope.ticketSelected = tickets
+                    $state.go('nav.checkout')
                 }, function (value) {
                     //Do something
                 });
