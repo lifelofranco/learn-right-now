@@ -12,6 +12,7 @@ section.background#index
       | learning right now.
   .center
     a.btn-view href="/class" View our list of classes
+
 section.bg-gray#featured_classes_section
   .container
     .row
@@ -24,7 +25,28 @@ section.bg-gray#featured_classes_section
                 p.class_title.ellipsis
                   | {{featuredClass.title}}
 
-section#what
+section.mentees#mentees
+  .container
+    .row
+      .col-md-6.padding
+        h2 For Mentees
+        .instructions
+          .steps
+            h2 1
+            p
+              | Search your desired topic and browse through a wide array of mentors/classes.
+          .steps
+            h2 2
+            p.row-space-top-4
+              | Message your mentor regarding your specific needs
+          .steps
+            h2 3
+            p.book
+              | Book your chosen mentor or class.
+      .col-md-5.col-md-offset-1.center.row-space-top-6
+        = image_tag "student.png", :class => "mentee"
+
+section.bg-gray#what
   .container
     .features.col-md-4.col-sm-12
       =image_tag "star.png"
@@ -39,27 +61,6 @@ section#what
       h3 Get better at what you love
       p Embark on the road to mastery from the convenience of your computer
 
-
-
-section.mentor.bg-gray#mentors
-  .container
-    .row.row-space-5
-      .col-md-5.col-md-offset-1.row-space-top-6
-        =image_tag "teacher.png", :class => "mentor-img"
-      .col-md-6.padding
-        h2 For Mentors
-        .instructions
-          .steps
-            h2 1
-            p Fill up an application form and send supporting documents.
-          .steps
-            h2 2
-            p
-              | Get booked by mentees based on mentor or class profile.
-          .steps
-            h2 3
-            p.book
-              | Let LRN facilitate the payment procedure.
 section#footer.bg-orange
   .container
     .row.row-space-top-6
