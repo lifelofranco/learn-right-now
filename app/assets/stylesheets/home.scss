@@ -190,11 +190,24 @@ font-weight: 700;
 }
 //
 
+form {
+  .input:focus {
+  	outline: none;
+  }
+  i {
+    float: left;
+    position: relative;
+    top: 35px;
+    left: 15px;
+    color: #cecfd3;
+  }
+}
 #register {
   button:hover, button:focus {
     color: white;
   }
 }
+
 .lrn-img {
   width: 44%;
   margin-top: 20px;
@@ -252,9 +265,6 @@ font-weight: 700;
 .error-now {
   border: 1px solid #ea2f4c !important;
 }
-.ngdialog-content {
-  width: 500px;
-}
 .check {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -279,6 +289,7 @@ font-weight: 700;
 .close-icon {
   margin-right: 12px;
 }
+<<<<<<< HEAD
 
 #featured_classes_section {
   padding-top: 25px;
@@ -300,6 +311,27 @@ font-weight: 700;
   font-family: Brandon;
   font-size: 50%;
   font-weight: normal;
+
+.gray {
+  color: #9d9d9d;;
+}
+
+.outline-button {
+  border-radius: 3px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 3px 10px;
+}
+
+.outline-button-gray {
+  border: solid 1px #9d9d9d;
+}
+
+.outline-button-gray:hover {
+  background-color: #9d9d9d;
+  color: #fff;
+}
 
 #index {
   header {
