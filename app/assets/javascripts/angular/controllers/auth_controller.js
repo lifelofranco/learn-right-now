@@ -4,8 +4,10 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
     $scope.progressbar.setColor('#77B6FF');
 
     $scope.registerUser = function(valid) {
+      $scope.submitted = true;
 
         if (valid) {
+          $scope.withError = false
           $scope.progressbar.start();
           var payload = {
             email: $scope.register.email,
@@ -17,14 +19,17 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
           $scope.progressbar.complete();
         }
 
+        else {
+          $scope.withError = true
+        }
+
     };
 
     $scope.loginUser = function(valid) {
-
+      $scope.submitted = true;
         if (valid) {
+          $scope.withError = false
           $scope.progressbar.start();
-
-
           var payload = {
             email: $scope.login.email,
             password: $scope.login.password
@@ -32,7 +37,20 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
           AuthService.login(payload);
           $scope.progressbar.complete();
         }
+        else {
+          $scope.withError = true
+        }
+
 
     };
+
+    $scope.signup = function() {
+      ngDialog.close()
+      ngDialog.open({ templateUrl: 'shared/register.html',
+          className: 'ngdialog-theme-default',
+          width: 300,
+          controller: 'AuthController'
+        })
+    }
 
 }])

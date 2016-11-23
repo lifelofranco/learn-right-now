@@ -16,14 +16,6 @@ Lrn.controller('ClassController', ['$scope', '$location', 'DemoService', 'ngDial
 
     $scope.cards = DemoService.class();
 
-    $scope.book = function() {
-      ngDialog.open({ templateUrl: 'shared/book.html',
-          className: 'ngdialog-theme-default',
-          width: 640,
-          controller: 'ModalController'
-        });
-    }
-
 
 
 
