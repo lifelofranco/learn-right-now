@@ -1,0 +1,57 @@
+.speaker {
+}
+
+.modal-header {
+  background-color: #17A05E;
+  color: white;
+
+  span {
+    text-align: center;
+    font-size: 120%;
+    font-weight: 300;
+  }
+}
+
+.is-table-row {
+  display: table;
+}
+.is-table-row [class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.speaker_info {
+  padding-top: 30px;
+  padding-right: 25px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-bottom: 30px;
+
+  .img_container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  img {
+    border-radius: 100%;
+    width: 100%;
+    height: auto;
+    border: 1px solid white;
+  }
+
+  .bio_container {
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    background: #EBEEF0;
+
+    p {
+      font-weight: 200;
+      line-height: 2.1em;
+      letter-spacing: 0.2px;
+    }
+  }
+}

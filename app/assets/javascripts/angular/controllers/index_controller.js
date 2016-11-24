@@ -1,5 +1,5 @@
-Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', 'UserService', 'ngDialog',
-  function($scope, anchorSmoothScroll, $location, UserService, ngDialog) {
+Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', 'UserService', 'DemoService', 'ngDialog',
+  function($scope, anchorSmoothScroll, $location, UserService, DemoService, ngDialog) {
     this.showNav = false;
 
     $scope.toggle = function() {
@@ -36,4 +36,5 @@ Lrn.controller('IndexController', ['$scope','anchorSmoothScroll', '$location', '
   //   });
   // }
 
+  $scope.featuredClasses = DemoService.getDummyFeaturedClasses();
 }]);
