@@ -34,11 +34,4 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
       }
     }
 
-    $scope.book = function() {
-      ngDialog.open({ templateUrl: 'shared/book.html',
-          className: 'ngdialog-theme-default',
-          width: 640,
-          controller: 'ModalController'
-        });
-    }
 }])

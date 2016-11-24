@@ -4,8 +4,4 @@ Lrn.controller('ModalController', ['$scope', '$location', 'DemoService', 'ngDial
     $scope.tickets = DemoService.ticket();
     console.log($scope.tickets);
 
-    $scope.checkout = function() {
-      ngDialog.close();
-      $state.go('nav.checkout')
-    }
 }]);

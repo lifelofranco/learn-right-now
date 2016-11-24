@@ -2,10 +2,10 @@
   .modal-header
     h3 Book Tickets
   form.content name="checkoutForm" ng-submit="checkout()" novalidate=""
-    .ticket-cont ng-repeat="ticket in tickets"
+    .ticket-cont ng-repeat="ticket in class.classTickets"
       .pull-left
         h4
-          | {{ticket.title}}
+          | {{ticket.name}}
         p.price
           | ₱ {{ticket.price}}
       .pull-right
