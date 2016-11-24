@@ -55,10 +55,23 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
       $state.go('nav.checkout')
     }
 
+    $scope.speakerName = "Father Dacanay, SJ";
+    $scope.speakers = DemoService.getSpeakers();
+    for (var i = 0; i < $scope.speakers.length; i++) {
+      if ($scope.speakers[i].name === $scope.speakerName) {
+        $scope.speaker = $scope.speakers[i];
+        break;
+      }
+    }
 
-    // $scope.cards = DemoService.class();
+//    console.log($scope.speaker);
 
-
-
-
+    $scope.getSpeaker = function() {
+      ngDialog.open({ templateUrl: 'class/speaker.html',
+          className: 'ngdialog-theme-default',
+          width: 640,
+          scope: $scope,
+          controller: 'SpeakerController'
+        });
+    }
 }])

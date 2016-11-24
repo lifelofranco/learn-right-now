@@ -10,10 +10,11 @@
 @import 'home';
 @import 'shared/cards';
 @import 'class/classes';
+@import 'class/speaker-modal';
 @import 'student/profile';
 @import 'checkout';
 
 //Imported CSS
 @import 'ngDialog.min';
 @import 'ngDialog-theme-default';
-@import 'ngProgress'
+@import 'ngProgress';
