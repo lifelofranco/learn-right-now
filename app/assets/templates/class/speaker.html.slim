@@ -1,0 +1,12 @@
+.speaker
+  .modal-header
+    h3
+      | {{speaker.name}}
+    span
+      | {{speaker.position}}
+  .speaker_info.row.is-table-row
+    .img_container.col-md-4
+      img ng-src="{{speaker.image}}"
+    .bio_container.col-md-8
+      p
+        | {{speaker.bio}}

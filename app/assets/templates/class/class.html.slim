@@ -31,7 +31,7 @@
     .col-md-9
       h3 Classes For You
       .card ng-repeat="card in cards | filter: {title: name}"
-        a href="/class/show"
+        a ui-sref="nav.show({id: card._id})"
           .event
             .image
               img.event-img ng-src="{{card.image}}"
@@ -41,8 +41,9 @@
             .details
               h5.ellipsis
                 | {{card.title}}
-              p.date
-                | {{card.date}}
+              div ng-repeat="date in card.dates"
+                p.date ng-bind="date | date:'EEE, MMM d, yyyy'"
+                  | {{date}}
               p.location
                 | {{card.location}}
             .hashtag

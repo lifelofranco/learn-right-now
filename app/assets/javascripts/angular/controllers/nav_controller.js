@@ -33,7 +33,6 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
         $window.location.reload();
       }
     }
-
     $scope.book = function() {
 
       ngDialog.openConfirm({
