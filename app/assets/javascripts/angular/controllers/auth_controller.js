@@ -1,10 +1,11 @@
-Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialog', 'ngProgressFactory',
-  function($scope, $location, AuthService, ngDialog, ngProgressFactory) {
+Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialog', 'ngProgressFactory', '$state',
+  function($scope, $location, AuthService, ngDialog, ngProgressFactory, $state) {
     $scope.progressbar = ngProgressFactory.createInstance();
-    $scope.progressbar.setColor('#77B6FF');
+    // $scope.progressbar.setColor('#77B6FF');
 
     $scope.registerUser = function(valid) {
       $scope.submitted = true;
+      $scope.withError = false;
 
         if (valid) {
           $scope.withError = false
@@ -15,12 +16,15 @@ Lrn.controller('AuthController', ['$scope', '$location', 'AuthService', 'ngDialo
             lastName: $scope.register.lastName,
             password: $scope.register.password
           }
-          AuthService.register(payload);
+          AuthService.register(payload)
+          .then(function(data) {
+          })
+          .catch(function(data){
+            $scope.withError = true
+            $scope.reason = data;
+            console.log(data);
+          });
           $scope.progressbar.complete();
-        }
-
-        else {
-          $scope.withError = true
         }
 
     };
