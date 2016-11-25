@@ -1,5 +1,5 @@
-Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog', '$cookies', '$state', '$window',
-  function($scope, $location, DemoService, ngDialog, $cookies, $state, $window) {
+Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog', '$cookies', '$state', '$window', '$stateParams', 'ClassService',
+  function($scope, $location, DemoService, ngDialog, $cookies, $state, $window, $stateParams, ClassService) {
 
     $scope.register = function() {
       ngDialog.open({ templateUrl: 'shared/register.html',
@@ -33,14 +33,26 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
         $window.location.reload();
       }
     }
+    $scope.class = {}
+
+
+
+        //
+        // $scope.book = function() {
+        //   ngDialog.open({ templateUrl: 'class/book.html',
+        //       className: 'ngdialog-theme-default',
+        //       width: 640,
+        //       controller: 'ClassController'
+        //     });
+        // }
     $scope.book = function() {
 
       ngDialog.openConfirm({
-                    templateUrl: 'shared/book.html',
+                    templateUrl: 'class/book.html',
                     className: 'ngdialog-theme-default',
-                    controller: 'ModalController'
+                    controller: 'ModalController',
+                    scope: $scope
                 }).then(function (tickets) {
-                  console.log(tickets)
                     $scope.ticketSelected = tickets
                     $state.go('nav.checkout')
                 }, function (value) {

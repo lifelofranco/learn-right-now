@@ -14,7 +14,6 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
 
     ClassService.classes()
     .then(function(data) {
-      console.log(data);
       $scope.cards = data;
       for(i=0; i<data.length; i++) {
         for(j=0; j<data[j].dates.length; j++) {
@@ -23,36 +22,19 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
           }
         }
       }
-
     });
 
     if ($state.$current.includes['nav.show'] && $stateParams.id) {
 
       ClassService.getClass($stateParams.id)
       .then(function(data) {
-        $scope.class = data;
+        $scope.class.details = data;
         for(i=0; i<data.dates.length; i++) {
           if(typeof(data.dates[i]) != String ) {
-            $scope.class.dates[i] = new Date(data.dates[i]);
+            $scope.class.details.dates[i] = new Date(data.dates[i]);
           }
         }
-        console.log(data);
       });
-
-
-    };
-
-    $scope.book = function() {
-      ngDialog.open({ templateUrl: 'class/book.html',
-          className: 'ngdialog-theme-default',
-          width: 640,
-          controller: 'ClassController'
-        });
-    }
-
-    $scope.checkout = function() {
-      ngDialog.close();
-      $state.go('nav.checkout')
     }
 
     $scope.speakerName = "Father Dacanay, SJ";
@@ -64,8 +46,6 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
       }
     }
 
-//    console.log($scope.speaker);
-
     $scope.getSpeaker = function() {
       ngDialog.open({ templateUrl: 'class/speaker.html',
           className: 'ngdialog-theme-default',
@@ -74,4 +54,6 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
           controller: 'SpeakerController'
         });
     }
+
+
 }])

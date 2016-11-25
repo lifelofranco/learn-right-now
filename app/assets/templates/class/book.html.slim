@@ -1,8 +1,8 @@
 .book
   .modal-header
     h3 Book Tickets
-  form.content name="checkoutForm" ng-submit="confirm(tickets)"  novalidate=""
-    .ticket-cont ng-repeat="ticket in class.classTickets"
+  form.content name="checkoutForm"  novalidate=""
+    .ticket-cont ng-repeat="ticket in class.details.classTickets"
       .pull-left
         h4
           | {{ticket.name}}
@@ -18,5 +18,5 @@
           option value="5" 5
           option value="6" 6
     .checkout.row
-      button.btn.pull-right.check-btn type="submit"
+      button.btn.pull-right.check-btn type="submit" ng-click="confirm(class.details.classTickets)"
         | Checkout
