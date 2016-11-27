@@ -18,21 +18,27 @@
         .order-header
           h4 Order Summary
         .order-details.summary
-          .row
+          .row ng-repeat="ticket in ticketSelected"
             .col-md-6
               label for="Type" Type:
               span
-                |  Registration
+                |  {{ticket.name}}
             .col-md-6
               label for="Quantity" Quantity:
               span
-                |  3
-      .order
-        .order-header
-          h4 Registration Information
+                |  {{ticket.quantity}}
+      .order ng-repeat="ticket in ticketSelected"
+        .order-header 
+          h4.inline-b Registration Information
+          .pull-right.add-margin-right
+            label 
+              | {{ticket.name}}
         .order-details
-          h4.row-space-4 Your Information
-          form name="orderForm" novalidate="" ng-submit="submitForm()"
+          h4.row-space-4.inline-b
+            | Your Information
+          form.row-space-5 name="orderForm" novalidate="" ng-submit="submitForm()" ng-repeat="detail in getNumber(ticket.quantity) track by $index"
+            label
+              | Ticket {{$index+1}}
             .row.row-space
               .no-padding.col-md-6
                 label for="firstName" First Name
@@ -64,10 +70,10 @@
                   .row-space-top-1 ng-show="submitted && orderForm.emailAddress.$error.required"
                     i.fa.fa-exclamation-circle
                     |  Please enter a valid email Address
-            .row
-              .pull-right
-                button.btn.btn-register ng-click="submitted=true" ng-disabled="submitted && orderForm.$invalid"
-                  | Complete Registration
+          .row
+            .pull-right
+              button.btn.btn-register ng-click="submitted=true" ng-disabled="submitted && orderForm.$invalid"
+                | Complete Registration
     .col-md-4
       .order
         .order-header

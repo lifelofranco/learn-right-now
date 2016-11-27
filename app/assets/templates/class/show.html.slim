@@ -1,23 +1,25 @@
 header.bg-blur
+  h1 
+    | {{hello}}
   .listing
-    img.header-img ng-src="{{class.image}}"
+    img.header-img ng-src="{{class.details.image}}"
 .bg-gray
   .show.row-space-top-6
     .row.bg-white.no-margin
       .col-md-8.no-padding
         .event-img
-          img.class-img ng-src="{{class.image}}"
+          img.class-img ng-src="{{class.details.image}}"
       .col-md-4.no-padding
         .event-details
           h2
-            | {{class.title}}
-          div ng-repeat="date in class.dates"
+            | {{class.details.title}}
+          div ng-repeat="date in class.details.dates"
             h4 ng-bind="date | date:'MMMM d, yyyy'"
               | {{date}}
           h4.location
-            | {{class.location}}
+            | {{class.details.location}}
           h4.price
-            | ₱ {{class.price}}
+            | ₱ {{class.details.price}}
           .book
             button.btn.book-btn ng-click="book()"
               | Book Now
@@ -26,7 +28,7 @@ header.bg-blur
           .description
             h3 Description
             p
-              | {{class.description}}
+              | {{class.details.description}}
             h4.row-space-top-7.row-space-4 Speakers:
             .row
               .col-md-3.center
@@ -39,21 +41,21 @@ header.bg-blur
                 button.btn.view-speaker-btn ng-click="getSpeaker('Father Dacanay, SJ')"
                   | View Details
             h5.row-space-top-7 Tags
-            span.tags ng-repeat="tag in class.tags"
+            span.tags ng-repeat="tag in class.details.tags"
               | #
               | {{tag}} 
         .col-md-4
           .description
             h4 Date and Time
-            div ng-repeat="date in class.dates"
+            div ng-repeat="date in class.details.dates"
               p ng-bind="date | date:'EEE, MMM d, yyyy'"
                 | {{date}}
               p
-                | {{class.schedule}}
+                | {{class.details.schedule}}
             h4.row-space-top-7 Address
             p
-              | {{class.venue}}
+              | {{class.details.venue}}
             p
-              | {{class.streetAddress}} {{class.city}}
+              | {{class.details.streetAddress}} {{class.details.city}}
             p
-              | {{class.postalCode}}
+              | {{class.details.postalCode}}
