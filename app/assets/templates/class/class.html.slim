@@ -1,52 +1,54 @@
-.container
-  .row.row-space-top-7
-    .col-md-3
-      .filter
-        .form-group.search
-          input.form-control.search-bar type="search" placeholder="Search Classes" ng-model="name"
-          i.line-icon.search-icon
-            | &#xe01f;
-        .add-padding-left
-          .filterBy
-            div ng-click="showTopics()"
-              h4 Topics
-              i.line-icon.pull-right
-                | &#xe62a;
-            ul.no-padding ng-show="topics"
-              li All Topics
-              li Business
-              li Programming
-              li Marketing
-              li Entrepreneur
-          .filterBy
-            div ng-click="showPrices()"
-              h4 Price
-              i.line-icon.pull-right
-                | &#xe62a;
-            ul.no-padding ng-show="prices"
-              li All Prices
-              li Paid
-              li Free
+.bg-gray
+  .container
+    .row.row-space-top-7
+      .col-md-3
+        .filter.bg-white
+          .form-group.search
+            input.form-control.search-bar type="search" placeholder="Search Classes" ng-model="name"
+            i.line-icon.search-icon
+              | &#xe01f;
+          .add-padding-left
+            .filterBy
+              div ng-click="showTopics()"
+                h4 Topics
+                i.line-icon.pull-right
+                  | &#xe62a;
+              ul.no-padding ng-show="topics"
+                li All Topics
+                li Business
+                li Programming
+                li Marketing
+                li Entrepreneur
+            .filterBy
+              div ng-click="showPrices()"
+                h4 Price
+                i.line-icon.pull-right
+                  | &#xe62a;
+              ul.no-padding ng-show="prices"
+                li All Prices
+                li Paid
+                li Free
 
-    .col-md-9
-      h3 Classes For You
-      .card ng-repeat="card in cards | filter: {title: name}"
-        a ui-sref="nav.show({id: card._id})"
-          .event
-            .image
-              img.event-img ng-src="{{card.image}}"
-              .price
-                p
-                  | ₱ {{card.price}}
-            .details
-              h5.ellipsis
-                | {{card.title}}
-              div ng-repeat="date in card.dates"
-                p.date ng-bind="date | date:'EEE, MMM d, yyyy'"
-                  | {{date}}
-              p.location
-                | {{card.location}}
-            .hashtag
-              p ng-repeat="tag in card.tags"
-                | #
-                | {{tag}}
+      .col-md-9
+        a.class-link ui-sref="nav.class"
+          h3 Classes For You
+        .card ng-repeat="card in cards | filter: {title: name}"
+          a ui-sref="nav.show({id: card._id})"
+            .event
+              .image
+                img.event-img ng-src="{{card.image}}"
+                .price
+                  p
+                    | ₱ {{card.price}}
+              .details
+                h5.ellipsis
+                  | {{card.title}}
+                div ng-repeat="date in card.dates"
+                  p.date ng-bind="date | date:'EEE, MMM d, yyyy'"
+                    | {{date}}
+                p.location
+                  | {{card.location}}
+              .hashtag
+                p ng-repeat="tag in card.tags"
+                  | #
+                  | {{tag}}
