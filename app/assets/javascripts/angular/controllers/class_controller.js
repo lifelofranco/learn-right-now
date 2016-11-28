@@ -12,9 +12,59 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
       this.prices = !this.prices;
     };
 
+    $scope.topic_filters = [
+      {"label": "All Topics",
+       "value": "all"},
+      {"label": "Business",
+       "value": "business"},
+      {"label": "Programming",
+       "value": "programming"},
+      {"label": "Marketing",
+      "value": "marketing"},
+      {"label": "Entrepreneur",
+       "value": "entrepreneur"}
+    ]
+
+    $scope.price_filters = [
+      {"label": "All Prices",
+       "value": "all"},
+      {"label": "Paid",
+       "value": "paid"},
+      {"label": "Free",
+       "value": "free"},
+    ]
+
+    $scope.topicFilter = function(tag) {
+      filtered_cards = []
+      _.each(all_cards, function(e, i, l) {
+        ifFound = _.contains(e.tags, tag);
+        if(ifFound) {
+          filtered_cards.push(e);
+        }
+        else if(tag == 'all') {
+          filtered_cards = all_cards
+        }
+      });
+      $scope.cards = filtered_cards
+    }
+
+    $scope.priceFilter = function(price) {
+      filtered_cards = []
+      _.each(all_cards, function(e, i, l) {
+        if(e.price === 'free') {
+          filtered_cards.push(e);
+        }
+        else if(price == 'all') {
+          filtered_cards = all_cards
+        }
+      });
+      $scope.cards = filtered_cards
+    }
+
     ClassService.classes()
     .then(function(data) {
       $scope.cards = data;
+      all_cards = $scope.cards
       for(i=0; i<data.length; i++) {
         for(j=0; j<data[j].dates.length; j++) {
           if(typeof(data[i].dates[j]) != String ) {

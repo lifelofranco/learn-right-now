@@ -12,21 +12,17 @@
               h4 Topics
               i.line-icon.pull-right
                 | &#xe62a;
-            ul.no-padding ng-show="topics"
-              li All Topics
-              li Business
-              li Programming
-              li Marketing
-              li Entrepreneur
+            ul.no-padding ng-show="topics" 
+              li ng-repeat="filter in topic_filters" ng-click="topicFilter(filter.value)"
+                | {{filter.label}}
           .filterBy
             div ng-click="showPrices()"
               h4 Price
               i.line-icon.pull-right
                 | &#xe62a;
             ul.no-padding ng-show="prices"
-              li All Prices
-              li Paid
-              li Free
+              li ng-repeat="price_filter in price_filters" ng-click="priceFilter(price_filter.value)"
+                | {{price_filter.label}}
 
     .col-md-9
       h3 Classes For You
