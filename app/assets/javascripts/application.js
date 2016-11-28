@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require lodash
 
 // ANGULAR: Core Angular Files
 //= require angular
