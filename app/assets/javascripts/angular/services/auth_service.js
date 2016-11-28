@@ -38,7 +38,6 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
       $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
       $http.post('https://lrn-api.herokuapp.com/api/v1/users/login', $.param(data))
       .success(function(data){
-        console.log(data)
         $cookies.put('token', data.token);
 
         $window.location.reload();
@@ -53,7 +52,6 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
           var payload = token.split('.')[1];
           payload = $window.atob(payload);
           payload = JSON.parse(payload);
-          console.log("USER:",payload);
           // return payload._doc;
 
           delete payload._doc.password;
@@ -61,6 +59,18 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
       }
   };
 
+  this.updateUser = function(user_id) {
+      var d = $q.defer();
+
+      $http({
+        method: 'GET',
+        url: 'https://lrn-api.herokuapp.com/api/v1/users/'+ user_id
+      }).success(function(data){
+        d.resolve(data);
+      });
+
+      return d.promise;
+    }
 
 
 }]);

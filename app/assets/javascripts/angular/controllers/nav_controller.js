@@ -35,16 +35,16 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
     }
     $scope.class = {}
 
+    function getNum(num) {
+      num = parseInt(num);
+      var emptyArray = [];
+      for (i=0; i < num; i++) {
+          emptyArray.push({});
+      }
+      return emptyArray;
 
+     }
 
-        //
-        // $scope.book = function() {
-        //   ngDialog.open({ templateUrl: 'class/book.html',
-        //       className: 'ngdialog-theme-default',
-        //       width: 640,
-        //       controller: 'ClassController'
-        //     });
-        // }
     $scope.book = function() {
 
       ngDialog.openConfirm({
@@ -54,6 +54,10 @@ Lrn.controller('NavController', ['$scope', '$location', 'DemoService', 'ngDialog
                     scope: $scope
                 }).then(function (tickets) {
                     $scope.ticketSelected = tickets
+                    $scope.classId = $state.params.id;
+                    _.each(tickets, function (a, idx) {
+                       $scope.ticketSelected[idx].details = getNum(a.quantity)
+                    })
                     $state.go('nav.checkout')
                 }, function (value) {
                     //Do something
