@@ -27,5 +27,23 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
     }
 
 
+    this.getUserClasses = function(class_ids) {
+      $http.defaults.headers.post["Content-Type"] = "application/json";
+      var params = {
+        "arrayOfIds" : class_ids
+      }
+      var d = $q.defer();
+          $http({
+          method: 'POST',
+          url: 'https://lrn-api.herokuapp.com/api/v1/classes/get_batch',
+          data: params
+      }).success(function(data){
+          d.resolve(data);
+      }).catch(function(data){
+          d.reject(data);
+      });
+
+        return d.promise;
+    }
 
 }]);

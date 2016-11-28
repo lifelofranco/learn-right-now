@@ -28,22 +28,22 @@
               span
                 |  {{ticket.quantity}}
       form.order name="orderForm" novalidate="" ng-submit="submitForm(orderForm.$valid)"
-        div ng-repeat="ticket in ticketSelected"
+        div data-ng-repeat="ticket in ticketSelected" ng-hide="ticket.quantity == 0"
           .order-header
             h4.inline-b Registration Information
             .pull-right.add-margin-right
               label
                 | {{ticket.name}}
-          .order-details
+          .order-details 
             h4.row-space-4.inline-b
               | Your Information
-            .row-space-5  ng-repeat="detail in getNumber(ticket.quantity) track by $index"
+            .row-space-5 ng-repeat="detail in ticket.details track by $index"
               label
                 | Ticket {{$index+1}}
               .row.row-space
                 .no-padding.col-md-6
                   label for="firstName" First Name
-                  input.form-control type="text" ng-model="tickets[$index+1].firstName" name= "firstName" required= "" placeholder= "Angela" ng-pattern="/^[a-zA-Z ]+$/"
+                  input.form-control type="text" ng-model="detail.firstName" name= "firstName" required= "" placeholder= "Angela" ng-pattern="/^[a-zA-Z ]+$/"
                   span.validation
                     .row-space-top-1 ng-show="submitted && orderForm.firstName.$error"
                       div ng-show="orderForm.firstName.$error.required"
@@ -54,7 +54,7 @@
                         |  Please enter a valid first name
                 .col-md-6
                   label for="lastName" Last Name
-                  input.form-control type="text" ng-model="tickets[$index+1].lastName" name="lastName" required="" placeholder= "Rosario" ng-pattern="/^[a-zA-Z ]+$/"
+                  input.form-control type="text" ng-model="detail.lastName" name="lastName" required="" placeholder= "Rosario" ng-pattern="/^[a-zA-Z ]+$/"
                   span.validation
                     .row-space-top-1 ng-show="submitted && orderForm.lastName.$error"
                       div ng-show="orderForm.lastName.$error.required"
@@ -66,7 +66,7 @@
               .row.row-space
                 .no-padding.col-md-6
                   label for="emailAddress" Email Address
-                  input.form-control type="email" ng-model="tickets[$index+1].emailAddress" name= "emailAddress" required= "" placeholder= "angelarosario@gmail.com"
+                  input.form-control type="email" ng-model="detail.email" name= "email" required= "" placeholder= "angelarosario@gmail.com"
                   span.validation
                     .row-space-top-1 ng-show="submitted && orderForm.emailAddress.$error.required"
                       i.fa.fa-exclamation-circle
