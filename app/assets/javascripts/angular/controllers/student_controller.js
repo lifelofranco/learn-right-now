@@ -1,5 +1,6 @@
-Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassService',
-  function($scope, DemoService, $state, ClassService) {
+Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassService', 'AuthService',
+  function($scope, DemoService, $state, ClassService, AuthService) {
+
     if(!$scope.user) {
       $state.go('index');
     }
@@ -37,4 +38,18 @@ Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassSer
       var docDefinition = ClassService.voucher()
       pdfMake.createPdf(docDefinition).download();
     }
+
+    console.log($scope.photo_html_string);
+
+    console.log($scope.user);
+
+    AuthService.updateUser($scope.user._id)
+    .then(function (d) {
+      console.log(d.classes);
+      ClassService.getUserClasses(d.classes)
+      .then(function(e) {
+        console.log(e);
+      })
+    })
+
 }]);
