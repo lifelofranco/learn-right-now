@@ -190,17 +190,21 @@ font-weight: 700;
 }
 //
 
-form {
-  .input:focus {
-  	outline: none;
+.login {
+  form {
+    .input:focus {
+      outline: none;
+    }
+    i {
+      float: left;
+      position: relative;
+      top: 35px;
+      left: 15px;
+      color: #cecfd3;
+    }
+
   }
-  i {
-    float: left;
-    position: relative;
-    top: 35px;
-    left: 15px;
-    color: #cecfd3;
-  }
+
 }
 #register {
   button:hover, button:focus {

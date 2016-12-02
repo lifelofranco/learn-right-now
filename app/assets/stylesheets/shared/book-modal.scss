@@ -34,6 +34,10 @@
     font-family: $reg-font;
     margin-top: 6px;
   }
+  span {
+    color: #808080;
+    font-size: 15px;
+  }
 }
 
 .quantity {
@@ -60,4 +64,5 @@
 }
 .price {
   color: green;
+  margin-bottom: 3px;
 }

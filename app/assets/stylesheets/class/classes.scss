@@ -97,7 +97,7 @@ h3 {
 .event-details {
   padding: 10px 25px 10px 30px;
   background: #EBEEF0;
-  min-height: 460px;
+  height: 460px;
   font-family: $reg-font;
 
   h4 {
@@ -107,9 +107,12 @@ h3 {
     margin-top: 50px;
     margin-bottom: 50px;
   }
+  .main-details {
+    height: 75%;
+  }
   .book {
-    margin-top: 125px;
-    text-align: center;
+    position: relative;
+    height: 20%;
 
     .book-btn {
        background: #17A05E;
@@ -117,7 +120,9 @@ h3 {
        font-size: 15px;
        padding: 10px;
        width: 95%;
-
+       position: absolute;
+       bottom: 10px;
+       left: 8px;
     }
   }
 }

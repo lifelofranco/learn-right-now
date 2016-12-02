@@ -8,6 +8,8 @@
           | {{ticket.name}}
         p.price
           | ₱ {{ticket.price}}
+        span
+          | {{ticket.maxSlots}} slots left
       .pull-right
         select.quantity ng-model="ticket.quantity" ng-init="ticket.quantity ='0'"
           option value="0" 0
