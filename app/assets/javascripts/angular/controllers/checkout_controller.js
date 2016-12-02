@@ -1,5 +1,6 @@
 Lrn.controller('CheckoutController', ['$scope', '$location', 'BookService', 'ngDialog', '$state',
   function($scope, $location, BookService, ngDialog, $state) {
+
     if(!$scope.ticketSelected) {
       $state.go('nav.show')
     }
@@ -35,10 +36,8 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'BookService', 'ngD
           console.log(d);
           $state.go('voucher');
         })
-
-      if( valid){
-          console.log($scope.tickets);
-          $state.go('nav.voucher')
+        console.log($scope.tickets);
+        $state.go('nav.voucher')
       }
-    };
-}])
+    }
+  }])

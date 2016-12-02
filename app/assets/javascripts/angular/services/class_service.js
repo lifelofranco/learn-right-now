@@ -26,10 +26,17 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
         return d.promise;
     }
 
-    this.voucher = function() {
+
+    this.voucher = function(ticket) {
+      console.log(ticket)
       return {
          content: [
-              { text: 'Event: 4th Entrepreneur & Franchise Expo Philippines', style: 'subheader' },
+           {
+             image: ticket.base64,
+             width: 200,
+             style: 'tableExample',
+           },
+              { text: ticket.title, style: 'subheader' },
   				       'For: Leo Lope Lofranco | Ticket Type: Early Bird',
   				    {
   						style: 'tableExample',
@@ -37,8 +44,8 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
               table: {
                 widths: ['*', '*', '*'],
 								body: [
-										['Date and Time', 'Location', 'Order Info'],
-										['Friday, March 10, 2017 at 11:00AM - Sunday, March 12, 2017 at 8:00 PM (PHT)', 'Megatrade Hall 1 Mandaluyong Philippines', 'OOrder #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+                    [{ text: 'Date and Time', style: 'subheader' }, { text: 'Location', style: 'subheader' }, { text: 'Order Info', style: 'subheader' }],
+										[ticket.date, ticket.location, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
 								]
 						        }
   				      }
@@ -55,7 +62,8 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
               margin: [0, 10, 0, 5]
             },
             tableExample: {
-              margin: [0, 5, 0, 15]
+              margin: [0, 20, 0, 15],
+              alignment: 'center'
             },
             tableHeader: {
               bold: true,
@@ -63,7 +71,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
               color: 'black'
             }
       	 },
-    };
+    }
     }
 
 
