@@ -19,6 +19,8 @@
 
 // Imported javascripts
 //= require ngDialog.min
+//= require pdfmake.min
+//= require vfs_fonts
 //= require_tree ../templates
 
 

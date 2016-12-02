@@ -32,6 +32,8 @@
               | {{format_date_class(upcoming_class.date)}}
             p.upcoming_class_location
               | {{upcoming_class.location}}
+            a ng-click="download(upcoming_class)" href=""
+              | Download Ticket
   #past_classes_container.container.classes_container ng-show="past_classes.length > 0"
     p.class_category_title PAST CLASSES
     #past_classes.row.class_list_container

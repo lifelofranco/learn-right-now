@@ -44,9 +44,14 @@ Lrn.config(
       }
     })
 
-    .state('voucher', {
-      url: '/voucher',
-      templateUrl: 'main/voucher.html',
+    .state('nav.voucher', {
+      url: '/class/voucher',
+      views: {
+        'content': {
+          templateUrl: 'main/voucher.html',
+          controller: 'VoucherController'
+        }
+      }
     })
 
     .state('list', {

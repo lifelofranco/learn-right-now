@@ -26,6 +26,46 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
         return d.promise;
     }
 
+    this.voucher = function() {
+      return {
+         content: [
+              { text: 'Event: 4th Entrepreneur & Franchise Expo Philippines', style: 'subheader' },
+  				       'For: Leo Lope Lofranco | Ticket Type: Early Bird',
+  				    {
+  						style: 'tableExample',
+  						color: '#444',
+              table: {
+                widths: ['*', '*', '*'],
+								body: [
+										['Date and Time', 'Location', 'Order Info'],
+										['Friday, March 10, 2017 at 11:00AM - Sunday, March 12, 2017 at 8:00 PM (PHT)', 'Megatrade Hall 1 Mandaluyong Philippines', 'OOrder #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+								]
+						        }
+  				      }
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              margin: [0, 0, 0, 10]
+      		  },
+            subheader: {
+              fontSize: 16,
+              bold: true,
+              margin: [0, 10, 0, 5]
+            },
+            tableExample: {
+              margin: [0, 5, 0, 15]
+            },
+            tableHeader: {
+              bold: true,
+              fontSize: 13,
+              color: 'black'
+            }
+      	 },
+    };
+    }
+
 
 
 }]);

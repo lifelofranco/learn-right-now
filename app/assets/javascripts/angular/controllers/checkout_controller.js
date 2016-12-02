@@ -18,6 +18,7 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'DemoService', 'ngD
 
       if( valid){
           console.log($scope.tickets);
+          $state.go('nav.voucher')
       }
     };
 }])

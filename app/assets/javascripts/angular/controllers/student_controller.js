@@ -1,5 +1,5 @@
-Lrn.controller('StudentController', ['$scope', 'DemoService','$state',
-  function($scope, DemoService, $state) {
+Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassService',
+  function($scope, DemoService, $state, ClassService) {
     if(!$scope.user) {
       $state.go('index');
     }
@@ -25,5 +25,16 @@ Lrn.controller('StudentController', ['$scope', 'DemoService','$state',
     }
 
     $scope.photo_html_string = "background-image:url(" + $scope.user_data.profile_photo + ")";
-    console.log($scope.photo_html_string);
+
+    ClassService.classes().then(function(d){
+      console.log(d);
+      $scope.sample = d[0]
+    })
+
+    $scope.download = function(ticket) {
+      console.log(ticket)
+
+      var docDefinition = ClassService.voucher()
+      pdfMake.createPdf(docDefinition).download();
+    }
 }]);
