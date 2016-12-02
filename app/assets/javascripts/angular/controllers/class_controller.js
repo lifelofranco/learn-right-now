@@ -65,12 +65,24 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
     .then(function(data) {
       $scope.cards = data;
       all_cards = $scope.cards
+      var index = 0;
+
+      //convert array of dates to date object
       for(i=0; i<data.length; i++) {
         for(j=0; j<data[j].dates.length; j++) {
           if(typeof(data[i].dates[j]) != String ) {
             $scope.cards[i].dates[j] = new Date(data[i].dates[j]);
           }
         }
+        //get minimum price in all tickets
+        //not sure if we need to get the highest price
+        for(k=1; k<data[i].classTickets.length; k++) {
+          if(data[i].classTickets[k].price < data[i].classTickets[index].price && data[i].classTickets[k].maxSlots > 0) {
+            index = k;
+          }
+        }
+        $scope.cards[i].price = $scope.cards[i].classTickets[index].price;
+        index = 0;
       }
     });
 
@@ -84,6 +96,14 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
             $scope.class.details.dates[i] = new Date(data.dates[i]);
           }
         }
+        //get minimum price
+        var index = 0;
+        for (i =1; i<$scope.class.details.classTickets.length; i++) {
+          if($scope.class.details.classTickets[i].price < $scope.class.details.classTickets[index].price) {
+            index = i;
+          }
+        }
+        $scope.class.details.price = $scope.class.details.classTickets[index].price;
       });
     }
 

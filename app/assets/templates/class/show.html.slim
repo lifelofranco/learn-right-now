@@ -1,5 +1,5 @@
 header.bg-blur
-  h1 
+  h1
     | {{hello}}
   .listing
     img.header-img ng-src="{{class.details.image}}"
@@ -11,19 +11,20 @@ header.bg-blur
           img.class-img ng-src="{{class.details.image}}"
       .col-md-4.no-padding
         .event-details
-          h2
-            | {{class.details.title}}
-          div ng-repeat="date in class.details.dates"
-            h4 ng-bind="date | date:'MMMM d, yyyy'"
-              | {{date}}
-          h4.location
-            | {{class.details.location}}
-          h4.price
-            | ₱ {{class.details.price}}
+          .main-details
+            h2
+              | {{class.details.title}}
+            div ng-repeat="date in class.details.dates"
+              h4 ng-bind="date | date:'MMMM d, yyyy'"
+                | {{date}}
+            h4.location
+              | {{class.details.venue}}
+            h4.price
+              | ₱ {{class.details.price}}
           .book
             button.btn.book-btn ng-click="book()"
               | Book Now
-      .row
+      .row.no-margin
         .col-md-8
           .description
             h3 Description
@@ -43,7 +44,7 @@ header.bg-blur
             h5.row-space-top-7 Tags
             span.tags ng-repeat="tag in class.details.tags"
               | #
-              | {{tag}} 
+              | {{tag}}
         .col-md-4
           .description
             h4 Date and Time

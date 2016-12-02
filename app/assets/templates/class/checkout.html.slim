@@ -5,13 +5,14 @@
         =image_tag "class.png", :class=> "checkout-img"
     .col-md-6
       h4.bold
-        | Social Media Marketing
+        | {{class.details.title}}
       h4
-        | Ateneo de Manila University
+        | {{class.details.location}}
+      div ng-repeat="date in class.details.dates"
+        h4 ng-bind="date | date:'MMMM d, yyyy'"
+          | {{date}}
       h4
-        | Tuesday, June 8, 2016
-      h4
-        | Quezon City, Philippines
+        | {{class.details.streetAddress}} {{class.details.city}}
   .row
     .col-md-8
       .order
@@ -34,7 +35,7 @@
             .pull-right.add-margin-right
               label
                 | {{ticket.name}}
-          .order-details 
+          .order-details
             h4.row-space-4.inline-b
               | Your Information
             .row-space-5 ng-repeat="detail in ticket.details track by $index"
