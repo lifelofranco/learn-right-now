@@ -27,6 +27,54 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
     }
 
 
+    this.voucher = function(ticket) {
+      console.log(ticket)
+      return {
+         content: [
+           {
+             image: ticket.base64,
+             width: 200,
+             style: 'tableExample',
+           },
+              { text: ticket.title, style: 'subheader' },
+  				       'For: Leo Lope Lofranco | Ticket Type: Early Bird',
+  				    {
+  						style: 'tableExample',
+  						color: '#444',
+              table: {
+                widths: ['*', '*', '*'],
+								body: [
+                    [{ text: 'Date and Time', style: 'subheader' }, { text: 'Location', style: 'subheader' }, { text: 'Order Info', style: 'subheader' }],
+										[ticket.date, ticket.location, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+								]
+						        }
+  				      }
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              margin: [0, 0, 0, 10]
+      		  },
+            subheader: {
+              fontSize: 16,
+              bold: true,
+              margin: [0, 10, 0, 5]
+            },
+            tableExample: {
+              margin: [0, 20, 0, 15],
+              alignment: 'center'
+            },
+            tableHeader: {
+              bold: true,
+              fontSize: 13,
+              color: 'black'
+            }
+      	 },
+    }
+    }
+
+
     this.getUserClasses = function(class_ids) {
       $http.defaults.headers.post["Content-Type"] = "application/json";
       var params = {

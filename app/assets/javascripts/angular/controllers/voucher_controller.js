@@ -5,8 +5,4 @@ Lrn.controller('VoucherController', ['$scope', '$location', 'BookService', 'ngDi
     .then(function(d) {
       console.log(d);
     })
-
-
-
-
 }])

@@ -43,9 +43,8 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'ClassService', 'Bo
         BookService.createBooking(booking)
         .then(function(d) {
           console.log(d);
-          $state.go('voucher');
+          $state.go('nav.profile');
         })
-
       }
-    };
+    }
 }])
