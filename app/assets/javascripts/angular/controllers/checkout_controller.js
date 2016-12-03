@@ -1,9 +1,18 @@
-Lrn.controller('CheckoutController', ['$scope', '$location', 'BookService', 'ngDialog', '$state',
-  function($scope, $location, BookService, ngDialog, $state) {
-
+Lrn.controller('CheckoutController', ['$scope', '$location', 'ClassService', 'BookService', 'ngDialog', '$state',
+  function($scope, $location, ClassService, BookService, ngDialog, $state) {
     if(!$scope.ticketSelected) {
-      $state.go('nav.show')
+      $state.go('nav.class ')
     }
+
+    ClassService.getClass($scope.classId)
+    .then(function(data) {
+      $scope.class.details = data;
+      for(i=0; i<data.dates.length; i++) {
+        if(typeof(data.dates[i]) != String ) {
+          $scope.class.details.dates[i] = new Date(data.dates[i]);
+        }
+      }
+    });
 
     $scope.tickets = [];
 
@@ -34,10 +43,8 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'BookService', 'ngD
         BookService.createBooking(booking)
         .then(function(d) {
           console.log(d);
-          $state.go('voucher');
+          $state.go('nav.profile');
         })
-        console.log($scope.tickets);
-        $state.go('nav.voucher')
       }
     }
-  }])
+}])
