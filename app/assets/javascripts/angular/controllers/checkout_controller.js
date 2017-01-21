@@ -24,6 +24,7 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'ClassService', 'Bo
             _.each(a.details, function(b) {
 
                 participant = {
+                  "classId": $scope.classId,
                   "firstName": b.firstName,
                   "lastName": b.lastName,
                   "email": b.email,
@@ -36,10 +37,9 @@ Lrn.controller('CheckoutController', ['$scope', '$location', 'ClassService', 'Bo
         });
         var booking = {
           "userId": $scope.user._id,
-          "classId": $scope.classId,
           "tickets": participants
         }
-
+        // console.log(booking);
         BookService.createBooking(booking)
         .then(function(d) {
           console.log(d);

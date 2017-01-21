@@ -3,7 +3,7 @@
     p#user_name
       | {{user.firstName}} {{user.lastName}}
     p#membership
-      | Member since: 
+      | Member since:
       span ng-bind= "user.createdIn | date:'MMMM d, yyyy'"
         |  {{user.createdIn}}
     #email_location_container
@@ -20,20 +20,23 @@
     /!    | {{interest}}{{$last ? '' : ', '}}
 #dashboard_container
   #upcoming_classes_container.container.classes_container ng-show="upcoming_classes.length > 0"
-    p.class_category_title UPCOMING CLASSES
+    p.class_category_title YOUR TICKETS
     #upcoming_classes.row.class_list_container
-      .upcoming_class.col-md-3.col-sm-4 ng-repeat="upcoming_class in upcoming_classes"
+      .upcoming_class.col-md-3.col-sm-4 ng-repeat="class in classes.tickets"
         .event
-          img.class_img ng-src="{{upcoming_class.image}}"
+          img.class_img ng-src="{{class.classImage}}"
           .class_details
             p.class_title.ellipsis
-              | {{upcoming_class.title}}
+              | {{class.classTitle}}
             p.upcoming_class_date
-              | {{format_date_class(upcoming_class.date)}}
+              | {{class.classSchedule}}
             p.upcoming_class_location
-              | {{upcoming_class.location}}
+              | {{class.classVenue}}
             a ng-click="download(upcoming_class)" href=""
               | Download Ticket
+            p
+              | {{class.firstName}} {{class.lastName}}
+/!
   #past_classes_container.container.classes_container ng-show="past_classes.length > 0"
     p.class_category_title PAST CLASSES
     #past_classes.row.class_list_container

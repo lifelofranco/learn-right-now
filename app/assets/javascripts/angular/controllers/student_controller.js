@@ -35,9 +35,8 @@ Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassSer
 
     AuthService.updateUser($scope.user._id)
     .then(function (d) {
-      ClassService.getUserClasses(d.classes)
-      .then(function(e) {
-      })
+      console.log(d);
+      $scope.classes = d;
     })
 
 }]);
