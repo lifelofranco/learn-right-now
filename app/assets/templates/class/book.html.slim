@@ -11,7 +11,7 @@
         span
           | {{ticket.maxSlots}} slots left
       .pull-right
-        select.quantity ng-model="ticket.quantity" ng-init="ticket.quantity ='0'"
+        select.quantity ng-model="ticket.quantity" ng-init="ticket.quantity ='0'" ng-change="selector(class.details.classTickets)"
           option value="0" 0
           option value="1" 1
           option value="2" 2
@@ -20,5 +20,5 @@
           option value="5" 5
           option value="6" 6
     .checkout.row
-      button.btn.pull-right.check-btn type="submit" ng-click="confirm(class.details.classTickets)"
+      button.btn.pull-right.check-btn type="submit" ng-disabled="atLeastOne" ng-click="confirm(class.details.classTickets)"
         | Checkout
