@@ -1,5 +1,5 @@
-Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassService', 'AuthService',
-  function($scope, DemoService, $state, ClassService, AuthService) {
+Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassService', 'AuthService', 'BookService',
+  function($scope, DemoService, $state, ClassService, AuthService, BookService) {
 
     if(!$scope.user) {
       $state.go('index');
@@ -37,6 +37,12 @@ Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassSer
     .then(function (d) {
       ClassService.getUserClasses(d.classes)
       .then(function(e) {
+        console.log(e)
+      })
+
+      BookService.getBooking($scope.user._id)
+      .then(function(e) {
+        console.log(e)
       })
     })
 
