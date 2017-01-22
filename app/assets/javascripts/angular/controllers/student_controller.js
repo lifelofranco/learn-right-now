@@ -44,6 +44,8 @@ Lrn.controller('StudentController', ['$scope', 'DemoService','$state', 'ClassSer
       .then(function(e) {
         console.log(e)
       })
+      console.log(d);
+      $scope.classes = d;
     })
 
 }]);
