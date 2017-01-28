@@ -31,13 +31,8 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
       console.log(ticket)
       return {
          content: [
-           {
-             image: ticket.base64,
-             width: 200,
-             style: 'tableExample',
-           },
-              { text: ticket.title, style: 'subheader' },
-  				       'For: Leo Lope Lofranco | Ticket Type: Early Bird',
+              { text: 'Demo Class', style: 'subheader' },
+  				       'For ' + ticket.firstName + ' ' + ticket.lastName + ' | Ticket Type ' + ticket.type,
   				    {
   						style: 'tableExample',
   						color: '#444',
@@ -45,7 +40,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
                 widths: ['*', '*', '*'],
 								body: [
                     [{ text: 'Date and Time', style: 'subheader' }, { text: 'Location', style: 'subheader' }, { text: 'Order Info', style: 'subheader' }],
-										[ticket.date, ticket.location, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+										[ticket.email, ticket.email, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
 								]
 						        }
   				      }
