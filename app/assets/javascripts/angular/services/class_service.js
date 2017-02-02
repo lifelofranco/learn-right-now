@@ -29,9 +29,10 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
 
     this.voucher = function(ticket) {
       console.log(ticket)
+      dateIssued = moment(ticket.dateIssued).format('LLL')
       return {
          content: [
-              { text: 'Demo Class', style: 'subheader' },
+              { text: ticket.classTitle, style: 'subheader' },
   				       'For ' + ticket.firstName + ' ' + ticket.lastName + ' | Ticket Type ' + ticket.type,
   				    {
   						style: 'tableExample',
@@ -40,7 +41,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
                 widths: ['*', '*', '*'],
 								body: [
                     [{ text: 'Date and Time', style: 'subheader' }, { text: 'Location', style: 'subheader' }, { text: 'Order Info', style: 'subheader' }],
-										[ticket.email, ticket.email, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+										[ticket.classSchedule, ticket.classVenue, 'Order #575789946. Ordered on ' + dateIssued ]
 								]
 						        }
   				      }
