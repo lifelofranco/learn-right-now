@@ -1,6 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require lodash
+//= require moment
+//= require moment-timezone
+
 
 // ANGULAR: Core Angular Files
 //= require angular

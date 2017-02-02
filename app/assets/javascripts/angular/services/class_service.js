@@ -29,15 +29,11 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
 
     this.voucher = function(ticket) {
       console.log(ticket)
+      dateIssued = moment(ticket.dateIssued).format('LLL')
       return {
          content: [
-           {
-             image: ticket.base64,
-             width: 200,
-             style: 'tableExample',
-           },
-              { text: ticket.title, style: 'subheader' },
-  				       'For: Leo Lope Lofranco | Ticket Type: Early Bird',
+              { text: ticket.classTitle, style: 'subheader' },
+  				       'For ' + ticket.firstName + ' ' + ticket.lastName + ' | Ticket Type ' + ticket.type,
   				    {
   						style: 'tableExample',
   						color: '#444',
@@ -45,7 +41,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
                 widths: ['*', '*', '*'],
 								body: [
                     [{ text: 'Date and Time', style: 'subheader' }, { text: 'Location', style: 'subheader' }, { text: 'Order Info', style: 'subheader' }],
-										[ticket.date, ticket.location, 'Order #575789946. Ordered by Leo Lope Lofranco on November 30, 2016 3:44PM']
+										[ticket.classSchedule, ticket.classVenue, 'Order #575789946. Ordered on ' + dateIssued ]
 								]
 						        }
   				      }
