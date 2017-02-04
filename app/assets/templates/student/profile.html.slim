@@ -32,7 +32,8 @@
               | {{class.classSchedule}}
             p.upcoming_class_location
               | {{class.classVenue}}
-            a ng-click="download(upcoming_class)" href=""
+            select.form-control ng-init="subticket=class.tickets[0]" ng-model="subticket" ng-options="subticket.firstName for subticket in class.tickets"
+            a ng-click="download(subticket)" href=""
               | Download Ticket
             p
               | {{class.firstName}} {{class.lastName}}
