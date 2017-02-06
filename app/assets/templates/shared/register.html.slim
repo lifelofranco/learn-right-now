@@ -1,8 +1,6 @@
 .login
   =image_tag "logo.png", :class => "logo-img"
   h3.gray Signup
-  i.fa.fa-facebook-official
-  p.gray OR
 
   .validation ng-if="registerForm.$invalid" ng-class="{'alert alert-danger row-space-top-7': submitted && registerForm.firstName.$error}" ng-messages="submitted && registerForm.firstName.$error"
     p ng-message="required"  Your First Name is required

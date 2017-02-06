@@ -1,8 +1,6 @@
 .login
   =image_tag "logo.png", :class => "logo-img"
   h3.gray Login
-  i.fa.fa-facebook-official
-  p.gray OR
   .validation ng-if="loginForm.$invalid" ng-class="{'alert alert-danger row-space-top-7': submitted && loginForm.email.$error}" ng-messages="submitted && loginForm.email.$error"
     p ng-message="required"  Your e-mail is required
     p ng-message="pattern"  Your e-mail is invalid
