@@ -54,8 +54,10 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
           payload = JSON.parse(payload);
           // return payload._doc;
 
-          delete payload._doc.password;
-          $rootScope.user = payload._doc;
+          this.updateUser(payload._id)
+          .then(function(data){
+              $rootScope.user = data;
+          })
       }
   };
 
