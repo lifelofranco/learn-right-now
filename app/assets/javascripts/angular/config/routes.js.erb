@@ -50,6 +50,26 @@ Lrn.config(
       controller: 'ListController'
     })
 
+    .state('nav.reset-password', {
+      url: '/reset_password/:id',
+      views: {
+        'content': {
+          templateUrl: 'shared/reset_password.html',
+          controller: 'PasswordController'
+        }
+      }
+    })
+
+    .state('nav.forgot-password', {
+      url: '/forgot_password',
+      views: {
+        'content': {
+          templateUrl: 'shared/forgot_password.html',
+          controller: 'PasswordController'
+        }
+      }
+    })
+
     .state('nav.profile', {
       url: '/profile',
       views: {
