@@ -10,7 +10,6 @@ Lrn.controller('PasswordController', ['$scope', '$location', 'DemoService', 'ngD
     };
 
     $scope.submitPassword = function(isValid) {
-        if (isValid) {
             var body = {
                 id: $stateParams.id,
                 password: $scope.reset_pw.password
@@ -23,6 +22,6 @@ Lrn.controller('PasswordController', ['$scope', '$location', 'DemoService', 'ngD
             });
 
         }
-    }
+    
 
 }]);
