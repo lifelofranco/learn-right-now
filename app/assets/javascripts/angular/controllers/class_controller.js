@@ -68,7 +68,7 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
       var index = 0;
 
       //convert array of dates to date object
-      for(i=0; i<data.length; i++) {
+      for(i=0; i<data.data.length; i++) {
         for(j=0; j<data.data[j].dates.length; j++) {
           if(typeof(data.data[i].dates[j]) != String ) {
             $scope.cards[i].dates[j] = new Date(data.data[i].dates[j]);
@@ -76,7 +76,7 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
         }
         //get minimum price in all tickets
         //not sure if we need to get the highest price
-        for(k=1; k<data[i].classTickets.length; k++) {
+        for(k=1; k<data.data[i].classTickets.length; k++) {
           if(data.data[i].classTickets[k].price < data.data[i].classTickets[index].price && data.data[i].classTickets[k].maxSlots > 0) {
             index = k;
           }
