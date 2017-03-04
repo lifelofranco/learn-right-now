@@ -4,8 +4,8 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
   var setUser = function(data) {
     $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
     $http.post('https://lrn-api.herokuapp.com/api/v1/users/login', $.param(data))
-    .success(function(data){
-      $cookies.put('token', data.token);
+    .then(function(data){
+      $cookies.put('token', data.data.token);
       $window.location.reload();
     })
 
@@ -20,13 +20,13 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
         method: 'POST',
         url: 'https://lrn-api.herokuapp.com/api/v1/users/register',
         data: data
-      }).success(function(success) {
+      }).then(function(success) {
         console.log(success);
         setUser(data);
         d.resolve(success);
-      }).error(function(data){
+      }).catch(function(data){
         console.log(data);
-        d.reject(data);
+        d.reject(data.data);
       });
 
 
@@ -37,8 +37,8 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
   this.login = function(data) {
       $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
       $http.post('https://lrn-api.herokuapp.com/api/v1/users/login', $.param(data))
-      .success(function(data){
-        $cookies.put('token', data.token);
+      .then(function(data){
+        $cookies.put('token', data.data.token);
 
         $window.location.reload();
       });
@@ -56,7 +56,7 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
 
           this.updateUser(payload._id)
           .then(function(data){
-              $rootScope.user = data;
+              $rootScope.user = data.data;
           })
       }
   };
@@ -67,7 +67,7 @@ Lrn.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
       $http({
         method: 'GET',
         url: 'https://lrn-api.herokuapp.com/api/v1/users/'+ user_id
-      }).success(function(data){
+      }).then(function(data){
         d.resolve(data);
       });
 

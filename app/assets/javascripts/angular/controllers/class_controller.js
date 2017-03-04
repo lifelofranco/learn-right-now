@@ -63,21 +63,21 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
 
     ClassService.classes()
     .then(function(data) {
-      $scope.cards = data;
+      $scope.cards = data.data;
       all_cards = $scope.cards
       var index = 0;
 
       //convert array of dates to date object
       for(i=0; i<data.length; i++) {
-        for(j=0; j<data[j].dates.length; j++) {
-          if(typeof(data[i].dates[j]) != String ) {
-            $scope.cards[i].dates[j] = new Date(data[i].dates[j]);
+        for(j=0; j<data.data[j].dates.length; j++) {
+          if(typeof(data.data[i].dates[j]) != String ) {
+            $scope.cards[i].dates[j] = new Date(data.data[i].dates[j]);
           }
         }
         //get minimum price in all tickets
         //not sure if we need to get the highest price
         for(k=1; k<data[i].classTickets.length; k++) {
-          if(data[i].classTickets[k].price < data[i].classTickets[index].price && data[i].classTickets[k].maxSlots > 0) {
+          if(data.data[i].classTickets[k].price < data.data[i].classTickets[index].price && data.data[i].classTickets[k].maxSlots > 0) {
             index = k;
           }
         }
@@ -90,10 +90,10 @@ Lrn.controller('ClassController', ['$scope', '$state', '$location', 'DemoService
 
       ClassService.getClass($stateParams.id)
       .then(function(data) {
-        $scope.class.details = data;
-        for(i=0; i<data.dates.length; i++) {
-          if(typeof(data.dates[i]) != String ) {
-            $scope.class.details.dates[i] = new Date(data.dates[i]);
+        $scope.class.details = data.data;
+        for(i=0; i<data.data.dates.length; i++) {
+          if(typeof(data.data.dates[i]) != String ) {
+            $scope.class.details.dates[i] = new Date(data.data.dates[i]);
           }
         }
         //get minimum price

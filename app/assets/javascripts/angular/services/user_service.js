@@ -8,7 +8,7 @@ Lrn.service('UserService', ["$q", "$http",
       method: 'POST',
       url: '/subscribe',
       data: data
-    }).success(function(data){
+    }).then(function(data){
       d.resolve(data);
     });
 
@@ -20,7 +20,7 @@ Lrn.service('UserService', ["$q", "$http",
     $http({
       method: 'GET',
       url: '/list',
-    }).success(function(data){
+    }).then(function(data){
       d.resolve(data);
     });
 

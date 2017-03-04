@@ -4,7 +4,7 @@ Lrn.controller('ListController', ['$scope','anchorSmoothScroll', '$location', 'U
 
     UserService.getAll().then(function(d){
       console.log(d);
-      $scope.data = d
+      $scope.data = d.data
     })
 
 

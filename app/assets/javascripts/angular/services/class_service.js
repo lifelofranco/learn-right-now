@@ -6,7 +6,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
       $http({
         method: 'GET',
         url: 'https://lrn-api.herokuapp.com/api/v1/classes'
-      }).success(function(data) {
+      }).then(function(data) {
         d.resolve(data)
       });
       return d.promise;
@@ -17,7 +17,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
           $http({
           method: 'GET',
           url: 'https://lrn-api.herokuapp.com/api/v1/classes/' + class_id
-      }).success(function(data){
+      }).then(function(data){
           d.resolve(data);
       }).catch(function(data){
           d.reject(data);
@@ -81,7 +81,7 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
           method: 'POST',
           url: 'https://lrn-api.herokuapp.com/api/v1/classes/get_batch',
           data: params
-      }).success(function(data){
+      }).then(function(data){
           d.resolve(data);
       }).catch(function(data){
           d.reject(data);

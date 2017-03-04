@@ -9,7 +9,7 @@ Lrn.service('BookService', ["$q", "$http", "$window", "$cookies", "$state",
        method: 'POST',
        url: 'https://lrn-api.herokuapp.com/api/v1/booking/create',
        data: data
-     }).success(function(data){
+     }).then(function(data){
        d.resolve(data);
      });
 
@@ -21,7 +21,7 @@ Lrn.service('BookService', ["$q", "$http", "$window", "$cookies", "$state",
      $http({
        method: 'GET',
        url: 'https://lrn-api.herokuapp.com/api/v1/users/'+ user_id
-     }).success(function(data){
+     }).then(function(data){
        d.resolve(data);
      });
 
