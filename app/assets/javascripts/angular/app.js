@@ -9,7 +9,7 @@ var Lrn = angular.module('Lrn', [
   'Lrn.services'
 ]);
 
-Lrn.run(['$rootScope', '$state', 'AuthService', '$location', 'ngProgressFactory', function($rootScope, $state, AuthService, $location, ngProgressFactory) {
+Lrn.run(['$rootScope', '$window', '$state', 'AuthService', '$location', 'ngProgressFactory', function($rootScope, $window, $state, AuthService, $location, ngProgressFactory) {
     AuthService.currentUser();
 
     $rootScope.progressbar = ngProgressFactory.createInstance();
@@ -20,4 +20,26 @@ Lrn.run(['$rootScope', '$state', 'AuthService', '$location', 'ngProgressFactory'
    $rootScope.$on("$stateChangeSuccess", function () {
        $rootScope.progressbar.complete();
    });
+
+   window.fbAsyncInit = function() {
+     FB.init({
+       appId      : '1073764279433839',
+       cookie     : true,
+       xfbml      : true,
+       version    : 'v2.8'
+     });
+
+     FB.getLoginStatus();
+
+   };
+
+   (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
 }]);

@@ -26,4 +26,19 @@ Lrn.service('UserService', ["$q", "$http",
 
     return d.promise;
   }
+
+  this.getSpecificUser = function(email) {
+      var d = $q.defer();
+      $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+      var query = $.param(email);
+      console.log('query', query);
+      var url = 'http://localhost:8180/api/v1/users?';
+      $http.get(url + query)
+      .then(function(data){
+        console.log('data', data);
+        d.resolve(data);
+      });
+
+      return d.promise;
+  };
 }]);

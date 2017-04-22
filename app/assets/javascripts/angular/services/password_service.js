@@ -3,10 +3,12 @@ Lrn.service('PasswordService', ["$q", "$http",
 
   this.resetPassword = function(data) {
 
+    // var url = 'https://lrn-api.herokuapp.com/api/v1/users/reset_password/' + data.id;
+    var url = 'http://localhost:8180/api/v1/users/reset_password/' + data.id
     var d = $q.defer();
     $http({
       method: 'POST',
-      url: 'https://lrn-api.herokuapp.com/api/v1/users/reset_password/' + data.id,
+      url: url,
       data: data
     }).then(function(data){
       d.resolve(data);
@@ -16,12 +18,12 @@ Lrn.service('PasswordService', ["$q", "$http",
   }
 
   this.sendForgotPwEmail = function(data) {
-
-    console.log("dito na ko sa service :D")
     var d = $q.defer();
+    // var url ='https://lrn-api.herokuapp.com/api/v1/users/forgot_password/';
+    var url = 'http://localhost:8180/api/v1/users/forgot_password/'
     $http({
       method: 'POST',
-      url: 'https://lrn-api.herokuapp.com/api/v1/users/forgot_password/',
+      url: url,
       data: data
     }).then(function(data){
       d.resolve(data);
