@@ -32,7 +32,8 @@ Lrn.service('UserService', ["$q", "$http",
       $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
       var query = $.param(email);
       console.log('query', query);
-      var url = 'http://localhost:8180/api/v1/users?';
+      // var url = 'http://localhost:8180/api/v1/users?';
+      var url = 'https://lrn-api.herokuapp.com/api/v1/users?'
       $http.get(url + query)
       .then(function(data){
         console.log('data', data);
