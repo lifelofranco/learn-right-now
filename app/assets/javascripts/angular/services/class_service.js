@@ -28,10 +28,15 @@ Lrn.service('ClassService', ["$rootScope", "$q", "$http", "$window", "$cookies",
 
 
     this.voucher = function(ticket) {
-      console.log(ticket)
+      console.log('voucher',ticket)
       dateIssued = moment(ticket.dateIssued).format('LLL')
       return {
          content: [
+              {
+                  image:ticket.base64,
+                  width: 200,
+                  height: 150
+              },
               { text: ticket.classTitle, style: 'subheader' },
   				       'For ' + ticket.firstName + ' ' + ticket.lastName + ' | Ticket Type ' + ticket.type,
   				    {
